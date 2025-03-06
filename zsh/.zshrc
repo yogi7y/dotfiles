@@ -25,7 +25,6 @@ preexec() { echo -ne '\e[6 q' ;}
 
 # Environment variables (putting these first)
 export ANDROID_HOME=$HOME/Library/Android/sdk/
-export PYENV_ROOT="$HOME/.pyenv"
 
 # Initialize DVM early
 if [[ -f ~/.dvm/scripts/dvm ]]; then
@@ -38,7 +37,6 @@ if type brew &>/dev/null; then
 fi
 
 # Path modifications (after DVM but before other tools)
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 export PATH="$PATH:$ANDROID_HOME/emulator"
 export PATH="$PATH:$ANDROID_HOME/platform-tools/"
 export PATH="$PATH:$HOME/.pub-cache/bin"
@@ -58,6 +56,8 @@ alias gl="git log"
 alias gd="git diff"
 alias gsw="git switch"
 
+alias python="python3"
+
 # Utility
 httpnvim() {
   if [ "$#" -lt 1 ]; then
@@ -72,8 +72,6 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
-eval "$(pyenv init -)"
-eval $(thefuck --alias)
 
 # Plugin sources
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -129,3 +127,7 @@ atuin-setup() {
 }
 
 atuin-setup
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

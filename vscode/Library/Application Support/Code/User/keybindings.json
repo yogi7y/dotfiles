@@ -1,164 +1,26 @@
 [
   {
-    "key": "space c p",
-    "command": "workbench.action.showCommands",
-    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+    "key": "ctrl+e", // toggle explorer.
+    "command": "workbench.action.toggleSidebarVisibility"
   },
   {
-    "key": "ctrl+h",
-    "command": "workbench.action.navigateLeft"
-  },
-  {
-    "key": "ctrl+l",
-    "command": "workbench.action.navigateRight"
-  },
-  {
-    "key": "ctrl+k",
-    "command": "workbench.action.navigateUp"
-  },
-  {
-    "key": "ctrl+j",
-    "command": "workbench.action.navigateDown"
-  },
-  {
-    "key": "space s b",
-    "command": "workbench.action.showAllEditorsByMostRecentlyUsed",
-    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
-  },
-  {
-    "key": "ctrl+e",
-    "command": "workbench.action.toggleSidebarVisibility",
-    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
-  },
-  {
-    "key": "tab",
-    "command": "workbench.action.nextEditorInGroup",
-    "when": "(vim.mode == 'Normal' || vim.mode == 'Visual') && (editorTextFocus || !inputFocus)"
-  },
-  {
-    "key": "shift+tab",
-    "command": "workbench.action.previousEditorInGroup",
-    "when": "(vim.mode == 'Normal' || vim.mode == 'Visual') && (editorTextFocus || !inputFocus)"
-  },
-
-  // Coding
-  {
-    "key": "ctrl+y",
-    "command": "editor.action.inlineSuggest.commit",
-    "when": "inlineSuggestionVisible && !editorReadonly"
-  },
-  {
-    "key": "ctrl+y",
-    "command": "acceptSelectedSuggestion",
-    "when": "suggestWidgetVisible && textInputFocus"
-  },
-  {
-    "key": "shift-k",
-    "command": "editor.action.showHover",
-    "when": "vim.mode == 'Normal' && editorTextFocus"
-  },
-  {
-    "key": "space c a",
-    "command": "editor.action.codeAction",
-    "when": "vim.mode == 'Normal' && editorTextFocus"
-  },
-  {
-    "key": "space c r",
-    "command": "editor.action.rename",
-    "when": "vim.mode == 'Normal' && editorTextFocus"
-  },
-  {
-    "key": "space c s",
-    "command": "workbench.action.gotoSymbol",
-    "when": "vim.mode == 'Normal' && editorTextFocus"
-  },
-  {
-    "key": "space b d",
-    "command": "workbench.action.closeActiveEditor",
-    "when": "vim.mode == 'Normal' && editorTextFocus"
-  },
-  {
-    "key": "space s f",
+    "key": "space s f", // quick open.
     "command": "workbench.action.quickOpen",
-    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+    "when": "vim.mode == 'Normal' && editorFocus"
   },
   {
-    "key": "space g d",
-    "command": "editor.action.revealDefinition",
-    "when": "vim.mode == 'Normal' && editorTextFocus"
+    "key": "space c p", // show all commands.
+    "command": "workbench.action.showCommands",
+    "when": "vim.mode == 'Normal' && editorFocus"
   },
   {
-    "key": "space g i",
-    "command": "editor.action.goToImplementation",
-    "when": "vim.mode == 'Normal' && editorTextFocus"
-  },
-  {
-    "key": "space g r",
-    "command": "editor.action.goToReferences",
-    "when": "vim.mode == 'Normal' && editorTextFocus"
-  },
-  {
-    "key": "space s g",
+    "key": "space s g", // grep
     "command": "workbench.action.findInFiles",
-    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
-  },
-  // Debugging
-  {
-    "key": "space d b",
-    "command": "editor.debug.action.toggleBreakpoint",
-    "when": "vim.mode == 'Normal' && editorTextFocus"
+    "when": "vim.mode == 'Normal' && editorFocus"
   },
   {
-    "key": "space d c",
-    "command": "editor.debug.action.runToCursor",
-
-    "when": "vim.mode == 'Normal' && editorTextFocus"
-  },
-  {
-    "key": "space d d",
-    "command": "workbench.action.debug.start",
-    "when": "vim.mode == 'Normal'"
-  },
-  {
-    "key": "6",
-    "command": "workbench.action.debug.stepInto",
-    "when": "vim.mode == 'Normal' && debuggable"
-  },
-  {
-    "key": "7",
-    "command": "workbench.action.debug.stepOver",
-    "when": "vim.mode == 'Normal' && debuggable"
-  },
-  {
-    "key": "8",
-    "command": "workbench.action.debug.stepOut",
-    "when": "vim.mode == 'Normal' && debuggable"
-  },
-  {
-    "key": "9",
-    "command": "workbench.action.debug.restart",
-    "when": "vim.mode == 'Normal' && debuggable"
-  },
-  {
-    "key": "space d x",
-    "command": "workbench.action.debug.stop",
-    "when": "vim.mode == 'Normal' && debuggable"
-  },
-
-  // Test
-  {
-    "key": "space t t",
-    "command": "testing.runAtCursor",
-    "when": "vim.mode == 'Normal'"
-  },
-  {
-    "key": "space t l",
-    "command": "testing.reRunLastRun",
-    "when": "vim.mode == 'Normal'"
-  },
-  {
-    "key": "space t d",
-    "command": "testing.debugAtCursor",
-    "when": "vim.mode == 'Normal'"
+    "key": "space d d", // run
+    "command": "workbench.action.debug.run",
+    "when": "vim.mode == 'Normal' && editorFocus"
   }
 ]
