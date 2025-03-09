@@ -22,5 +22,35 @@
     "key": "space d d", // run
     "command": "workbench.action.debug.run",
     "when": "vim.mode == 'Normal' && editorFocus"
+  },
+  {
+    "key": "space c a", // quick fix/code action
+    "command": "editor.action.quickFix",
+    "when": "vim.mode == 'Normal' && editorFocus"
+  },
+  {
+    "key": "space c r", // rename symbol
+    "command": "editor.action.rename",
+    "when": "vim.mode == 'Normal' && editorFocus"
+  },
+  {
+    "key": "space g d", // go to definition
+    "command": "editor.action.goToDeclaration",
+    "when": "vim.mode == 'Normal' && editorFocus"
+  },
+  {
+    "key": "space g i", // go to implementation
+    "command": "editor.action.goToImplementation",
+    "when": "vim.mode == 'Normal' && editorFocus"
+  },
+  {
+    "key": "shift-k", // hover to show documentation
+    "command": "editor.action.showHover",
+    "when": "vim.mode == 'Normal' && editorFocus"
+  },
+  {
+    "key": "space c n", // create new file
+    "command": "extension.advancedNewFile",
+    "when": "vim.mode == 'Normal' && editorFocus"
   }
 ]
