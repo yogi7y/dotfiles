@@ -13,14 +13,22 @@
     "command": "workbench.action.showCommands",
     "when": "vim.mode == 'Normal' && editorFocus"
   },
+
+  // Debugging
   {
-    "key": "space s g", // grep
-    "command": "workbench.action.findInFiles",
+    "key": "space d d", // run
+    "command": "workbench.action.debug.start",
     "when": "vim.mode == 'Normal' && editorFocus"
   },
   {
-    "key": "space d d", // run
-    "command": "workbench.action.debug.run",
+    "key": "space d b", // toggle breakpoint
+    "command": "editor.debug.action.toggleBreakpoint",
+    "when": "vim.mode == 'Normal' && editorFocus"
+  },
+
+  {
+    "key": "space s g", // grep
+    "command": "workbench.action.findInFiles",
     "when": "vim.mode == 'Normal' && editorFocus"
   },
   {
