@@ -1,0 +1,138 @@
+{
+  "workbench.startupEditor": "none",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "editor.formatOnSave": true,
+  "cSpell.userWords": [
+    "autofocus",
+    "autovalidate",
+    "awscdk",
+    "bools",
+    "bottomsheet",
+    "Catppuccin",
+    "Colour",
+    "combinators",
+    "cupertino",
+    "debuggable",
+    "deeplink",
+    "demangle",
+    "endtemplate",
+    "Flushbar",
+    "fluttertoast",
+    "fvmrc",
+    "intellij",
+    "interps",
+    "ints",
+    "linkify",
+    "LTRB",
+    "mocktail",
+    "openai",
+    "Parwani",
+    "pincode",
+    "plpgsql",
+    "postalpincode",
+    "Pressable",
+    "psql",
+    "pubspec",
+    "readmore",
+    "redeclares",
+    "respository",
+    "riverpod",
+    "rxdart",
+    "sqflite",
+    "strikethrough",
+    "subarray",
+    "subarrays",
+    "sublist",
+    "supabase",
+    "tearoffs",
+    "todos",
+    "Tokenable",
+    "unawaited",
+    "utsname",
+    "vsync",
+    "webp",
+    "writeln",
+    "Yogesh"
+  ],
+  "cSpell.enabledFileTypes": {
+    "*": true,
+    "markdown": true
+  },
+  "cSpell.ignorePaths": [
+    "package-lock.json",
+    "node_modules",
+    "vscode-extension",
+    ".git/{info,lfs,logs,refs,objects}/**",
+    ".git/{index,*refs,*HEAD}",
+    ".vscode",
+    ".vscode-insiders",
+    "*.g.dart"
+  ],
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "dart.debugExternalPackageLibraries": false,
+  "dart.debugSdkLibraries": false,
+  "workbench.activityBar.location": "hidden",
+  "workbench.sideBar.location": "right",
+  "editor.fontSize": 15,
+  "editor.lineNumbers": "relative",
+  "workbench.layoutControl.enabled": false,
+  "window.commandCenter": false,
+  "editor.fontFamily": "FiraCode Nerd Font Mono",
+  "editor.fontLigatures": true,
+  "terminal.integrated.fontSize": 15,
+  "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
+  "dart.lineLength": 100,
+  "git.openRepositoryInParentFolders": "never",
+  "material-icon-theme.files.color": "#90a4ae",
+  "material-icon-theme.folders.theme": "specific",
+  "material-icon-theme.saturation": 1,
+  "material-icon-theme.folders.associations": {
+    "presentation": "layout",
+    "network": "connection",
+    "features": "project",
+    "domain": "class"
+  },
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": true,
+    "scminput": false
+  },
+  "workbench.colorCustomizations": {
+    "[Material Theme Palenight High Contrast]": {}
+  },
+  "debug.inlineValues": "on",
+  "go.useLanguageServer": true,
+  "gopls": {
+    "formatting.gofumpt": true
+  },
+  "testing.openTesting": "neverOpen",
+  "github.copilot.editor.enableAutoCompletions": true,
+  "workbench.editor.editorActionsLocation": "titleBar",
+  "markdown.extension.tableFormatter.normalizeIndentation": false,
+  "markdown-mermaid.darkModeTheme": "dark",
+  "go.toolsManagement.autoUpdate": true,
+  "workbench.editor.showTabs": "none",
+  "editor.minimap.enabled": false,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.inlineSuggest.edits.experimental.enabled": false,
+  "testing.automaticallyOpenTestResults": "neverOpen",
+  "vim.useSystemClipboard": true,
+  "vim.overrideCopy": false,
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "dart.checkForSdkUpdates": false,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "dart.closeDevTools": "ifOpened",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
