@@ -10,3 +10,30 @@ docs/
 # FVM Version Cache
 .fvm/
 node_modules
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Python Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Python Virtual Environments
+venv/
+env/
+.env/
+.venv/
+
+# Python Testing
+.coverage
+.pytest_cache/
+htmlcov/
+
+# Python IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
