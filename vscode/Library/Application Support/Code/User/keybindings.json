@@ -9,6 +9,11 @@
     "when": "vim.mode == 'Normal' && editorFocus"
   },
   {
+    "key": "space s b", // show open buffer
+    "command": "workbench.action.quickOpenPreviousRecentlyUsedEditor",
+    "when": "vim.mode == 'Normal' && editorFocus"
+  },
+  {
     "key": "space c p", // show all commands.
     "command": "workbench.action.showCommands",
     "when": "vim.mode == 'Normal' && editorFocus"
