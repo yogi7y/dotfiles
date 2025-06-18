@@ -1,4 +1,4 @@
-import unittest
+import pytest
 import os
 import tempfile
 from pathlib import Path
@@ -9,65 +9,99 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from concat_files import concatenate_files
 
 
-class TestConcatFiles(unittest.TestCase):
-    def setUp(self):
-        # Create a temporary directory for test files
-        self.test_dir = tempfile.mkdtemp()
+@pytest.fixture
+def test_files():
+    # Create a temporary directory for test files
+    test_dir = tempfile.mkdtemp()
 
-        # Create test input files
-        self.file1_path = Path(self.test_dir) / "file1.txt"
-        self.file2_path = Path(self.test_dir) / "file2.txt"
-        self.output_path = Path(self.test_dir) / "output.txt"
+    # Create test input files
+    file1_path = Path(test_dir) / "file1.txt"
+    file2_path = Path(test_dir) / "file2.txt"
+    output_path = Path(test_dir) / "output.txt"
 
-        # Write test content
-        self.file1_path.write_text("Content of file 1\nSecond line")
-        self.file2_path.write_text("Content of file 2")
+    # Write test content
+    file1_path.write_text("Content of file 1\nSecond line")
+    file2_path.write_text("Content of file 2")
 
-    def tearDown(self):
-        # Clean up test files
-        for file in [self.file1_path, self.file2_path, self.output_path]:
-            if file.exists():
-                file.unlink()
-        os.rmdir(self.test_dir)
+    yield {
+        "dir": test_dir,
+        "file1": file1_path,
+        "file2": file2_path,
+        "output": output_path,
+    }
 
-    def test_basic_concatenation(self):
-        """Test basic file concatenation with two files"""
-        input_files = [str(self.file1_path), str(self.file2_path)]
-        concatenate_files(input_files, str(self.output_path))
-
-        # Read the output and verify
-        output_content = self.output_path.read_text()
-        expected = "Content of file 1\nSecond line\n\n--------------------\n\nContent of file 2\n"
-        self.assertEqual(output_content, expected)
-
-    def test_missing_file(self):
-        """Test handling of missing files"""
-        non_existent = str(Path(self.test_dir) / "nonexistent.txt")
-        input_files = [str(self.file1_path), non_existent, str(self.file2_path)]
-
-        # Should not raise an exception
-        concatenate_files(input_files, str(self.output_path))
-
-        # Should still concatenate existing files
-        output_content = self.output_path.read_text()
-        self.assertIn("Content of file 1", output_content)
-        self.assertIn("Content of file 2", output_content)
-
-    def test_empty_file(self):
-        """Test handling of empty files"""
-        empty_file = Path(self.test_dir) / "empty.txt"
-        empty_file.touch()
-
-        input_files = [str(self.file1_path), str(empty_file)]
-        concatenate_files(input_files, str(self.output_path))
-
-        # Verify output
-        output_content = self.output_path.read_text()
-        self.assertIn("Content of file 1", output_content)
-        self.assertIn("--------------------", output_content)
-
-        empty_file.unlink()
+    # Clean up test files
+    for file in [file1_path, file2_path, output_path]:
+        if file.exists():
+            file.unlink()
+    os.rmdir(test_dir)
 
 
-if __name__ == "__main__":
-    unittest.main()
+def test_basic_concatenation(test_files):
+    """Test basic file concatenation with two files"""
+    input_files = [str(test_files["file1"]), str(test_files["file2"])]
+    concatenate_files(input_files, str(test_files["output"]))
+
+    # Read the output and verify
+    output_content = test_files["output"].read_text()
+    expected = (
+        "File: file1.txt\n\n"
+        "Content of file 1\nSecond line\n\n"
+        "--------------------\n\n"
+        "File: file2.txt\n\n"
+        "Content of file 2\n"
+    )
+    assert output_content == expected
+
+
+def test_missing_file(test_files):
+    """Test handling of missing files"""
+    non_existent = str(Path(test_files["dir"]) / "nonexistent.txt")
+    input_files = [str(test_files["file1"]), non_existent, str(test_files["file2"])]
+
+    # Should not raise an exception
+    concatenate_files(input_files, str(test_files["output"]))
+
+    # Should still concatenate existing files
+    output_content = test_files["output"].read_text()
+    assert "File: file1.txt" in output_content
+    assert "Content of file 1" in output_content
+    assert "File: file2.txt" in output_content
+    assert "Content of file 2" in output_content
+
+
+def test_empty_file(test_files):
+    """Test handling of empty files"""
+    empty_file = Path(test_files["dir"]) / "empty.txt"
+    empty_file.touch()
+
+    input_files = [str(test_files["file1"]), str(empty_file)]
+    concatenate_files(input_files, str(test_files["output"]))
+
+    # Verify output
+    output_content = test_files["output"].read_text()
+    assert "File: file1.txt" in output_content
+    assert "Content of file 1" in output_content
+    assert "File: empty.txt" in output_content
+    assert "--------------------" in output_content
+
+    empty_file.unlink()
+
+
+def test_file_name_display(test_files):
+    """Test that file names are correctly displayed in the output"""
+    input_files = [str(test_files["file1"])]
+    concatenate_files(input_files, str(test_files["output"]))
+
+    output_content = test_files["output"].read_text()
+
+    # Check file name header format
+    assert output_content.startswith("File: file1.txt\n\n")
+
+    # Verify content follows the file name
+    assert "Content of file 1" in output_content
+
+    # Verify spacing between file name and content
+    file_name_line, empty_line, *content = output_content.split("\n")
+    assert file_name_line == "File: file1.txt"
+    assert empty_line == ""

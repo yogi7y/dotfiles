@@ -40,6 +40,10 @@ def concatenate_files(input_files, output_file):
                     if i > 0:
                         outfile.write("\n" + separator + "\n")
 
+                    # Write the file name
+                    file_name = Path(file_path).name
+                    outfile.write(f"File: {file_name}\n\n")
+
                     # Read and write file content, ensure it ends with newline
                     outfile.write(infile.read().rstrip("\n") + "\n")
 
