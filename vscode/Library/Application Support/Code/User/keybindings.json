@@ -82,10 +82,22 @@
   },
   {
     "key": "ctrl+j",
-    "command": "workbench.action.navigateDown"
+    "command": "workbench.action.terminal.focus",
+    "when": "!terminalFocus"
   },
   {
     "key": "cmd+i",
     "command": "composerMode.agent"
+  },
+
+  // Terminal
+  {
+    "key": "cmd+k",
+    "command": "workbench.action.terminal.clear"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "terminalFocus"
   }
 ]
