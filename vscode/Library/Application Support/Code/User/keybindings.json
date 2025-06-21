@@ -99,5 +99,21 @@
     "key": "ctrl+k",
     "command": "workbench.action.focusActiveEditorGroup",
     "when": "terminalFocus"
+  },
+  // Maximise/Minimise the terminal.
+  {
+    "key": "cmd+shift+j",
+    "command": "workbench.action.toggleMaximizedPanel"
+  },
+  // Focus the next/previous terminal.
+  {
+    "key": "cmd+]",
+    "command": "workbench.action.terminal.focusNext",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "cmd+[",
+    "command": "workbench.action.terminal.focusPrevious",
+    "when": "terminalFocus"
   }
 ]
