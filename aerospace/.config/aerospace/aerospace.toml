@@ -151,6 +151,7 @@ automatically-unhide-macos-hidden-apps = false
     alt-c = 'exec-and-forget open -a /Applications/Cursor.app'
     alt-n = 'exec-and-forget open -a /Applications/Notion.app'
     alt-o = 'exec-and-forget open -a /Applications/Todoist.app'
+    alt-f = 'exec-and-forget open -a /System/Library/CoreServices/Finder.app'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#mode
     alt-shift-semicolon = 'mode service'
@@ -174,3 +175,8 @@ automatically-unhide-macos-hidden-apps = false
     down = 'volume down'
     up = 'volume up'
     shift-down = ['volume set 0', 'mode main']
+
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'finder'
+run = 'layout floating'
