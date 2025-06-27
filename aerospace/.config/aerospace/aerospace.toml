@@ -177,6 +177,16 @@ automatically-unhide-macos-hidden-apps = false
     shift-down = ['volume set 0', 'mode main']
 
 
+# Open apps in floating window.
 [[on-window-detected]]
 if.app-name-regex-substring = 'finder'
 run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'youtube music'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'localsend'
+run = 'layout floating'
+
