@@ -146,7 +146,7 @@ automatically-unhide-macos-hidden-apps = false
     alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
     # App launch shortcuts
-    alt-b = 'exec-and-forget open -a /Applications/Arc.app'
+    alt-b = 'exec-and-forget open -a /Applications/Dia.app'
     alt-t = 'exec-and-forget open -a /Applications/WezTerm.app'
     alt-c = 'exec-and-forget open -a /Applications/Cursor.app'
     alt-n = 'exec-and-forget open -a /Applications/Notion.app'
