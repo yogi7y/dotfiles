@@ -59,6 +59,20 @@ When working with this dotfiles repository:
 3. The install.sh script handles dependency installation via Homebrew
 4. Configuration files follow XDG Base Directory specification where possible
 
+### After Making Configuration Changes
+
+After modifying any configuration files, ensure changes are applied:
+
+1. **Re-stow the package**: `stow <package>` to update symlinks
+2. **Source/reload as needed**:
+   - Zsh: `source ~/.zshrc` or start new terminal
+   - Tmux: `tmux source-file ~/.tmux.conf` or restart tmux
+   - Git: Changes apply immediately
+   - WezTerm: Restart application or reload config
+   - AeroSpace: `aerospace reload-config`
+   - Starship: Start new terminal session
+3. **Test the changes** in a new terminal session to verify they work correctly
+
 ## Important Notes
 
 - This is a macOS-specific setup (uses Homebrew, macOS applications)
