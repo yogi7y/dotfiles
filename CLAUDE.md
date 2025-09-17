@@ -76,3 +76,28 @@ The repository uses a stow-friendly directory structure where each tool has its 
 4. **Neovim Setup**: Uses lazy.nvim as the plugin manager, which gets installed to `~/.local/share/nvim/lazy/lazy.nvim`
 
 5. **tmux Setup**: Uses TPM (Tmux Plugin Manager) installed at `~/.tmux/plugins/tpm`
+
+## Code Style Guidelines
+
+### Configuration Comments
+**ALWAYS add comments when making configuration changes** to explain what each setting does:
+- Add a brief comment above or inline with each configuration option
+- Comments should explain the purpose and effect of the setting
+- Keep comments concise but informative
+
+Examples:
+```lua
+-- Enable relative line numbers for easier navigation
+vim.opt.relativenumber = true
+
+-- Set tab width to 2 spaces for consistency
+vim.opt.tabstop = 2
+```
+
+```bash
+# Enable syntax highlighting in less
+export LESS='-R'
+
+# Use zoxide for smarter directory navigation
+alias cd='z'
+```
