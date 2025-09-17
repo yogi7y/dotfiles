@@ -2,23 +2,77 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Overview
+## Repository Overview
 
-This is a personal dotfiles repository containing configuration files for a macOS development environment. The repository uses GNU Stow for managing dotfiles symlinks and follows the XDG Base Directory specification for organizing configurations.
+This is a dotfiles repository that uses GNU Stow for symlink management. The repository contains configuration files for various development tools including Neovim, tmux, Zsh, WezTerm, VSCode, and more.
 
-## Important Guidelines
+## Common Commands
 
-### When Making Configuration Changes
+### Installation and Setup
+```bash
+# Initial setup (installs Homebrew packages and symlinks configs)
+./install.sh
 
-1. **Always apply changes after editing**: After modifying any configuration file, ensure to:
+# Symlink individual configurations using stow
+stow nvim      # Neovim config
+stow tmux      # tmux config
+stow zsh       # Zsh config (.zshrc)
+stow wezterm   # WezTerm terminal config
+stow starship  # Starship prompt config
+stow git       # Git config
 
-   - Run `stow <package-name>` to update symlinks (e.g., `stow nvim` after editing nvim configs)
-   - Source the configuration if it's for the current shell session (e.g., `source ~/.zshrc`)
+# Remove symlinks
+stow -D nvim   # Unstow a configuration
+```
 
-2. **Respect XDG conventions**: All configurations should be placed in `.config` subdirectories within their respective package folders
+### VSCode Extensions Management
+```bash
+# Update extensions list
+./vscode/update-extensions.sh
 
-3. **Preserve existing patterns**: Follow the existing structure and conventions used in each configuration file
+# Install extensions from list
+./vscode/install-extensions.sh
+```
 
-### Stow Management
+### Python Scripts and Testing
+```bash
+# Run Python tests
+cd scripts/python
+pytest tests/
 
-This repository uses GNU Stow for symlink management. Common commands:
+# Run specific test
+pytest tests/test_concat_files.py
+```
+
+## Repository Structure
+
+The repository uses a stow-friendly directory structure where each tool has its own directory containing the expected file hierarchy:
+
+- `nvim/` - Contains `.config/nvim/` with Neovim configuration
+- `tmux/` - Contains `.config/tmux/` with tmux configuration
+- `zsh/` - Contains `.zshrc` for Zsh shell configuration
+- `wezterm/` - Contains `.config/wezterm/wezterm.lua` for WezTerm terminal
+- `starship/` - Starship prompt configuration
+- `git/` - Git configuration files
+- `vscode/` - VSCode settings and extension management scripts
+- `scripts/` - Utility scripts in Python and JavaScript
+  - `python/` - Python utilities with pytest tests
+  - `javascript/` - JavaScript utilities
+
+## Key Technical Details
+
+1. **Symlink Management**: Uses GNU Stow v2.4.1 for managing symlinks. Each directory represents a "package" that gets symlinked to the home directory maintaining the internal structure.
+
+2. **Installation Script**: The `install.sh` script handles:
+   - Homebrew installation check
+   - Package installation (neovim, tmux, zsh, starship, fzf, zoxide, eza, git, lua, stow)
+   - Zsh plugin installation (autosuggestions, syntax-highlighting)
+   - TPM (Tmux Plugin Manager) setup
+   - lazy.nvim (Neovim plugin manager) installation
+   - Automatic stowing of configurations
+
+3. **Python Development**: The `scripts/python/` directory contains Python utilities with a proper test structure using pytest.
+
+4. **Neovim Setup**: Uses lazy.nvim as the plugin manager, which gets installed to `~/.local/share/nvim/lazy/lazy.nvim`
+
+5. **tmux Setup**: Uses TPM (Tmux Plugin Manager) installed at `~/.tmux/plugins/tpm`
