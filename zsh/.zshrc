@@ -43,7 +43,6 @@ export PATH="$PATH:$HOME/.pub-cache/bin"
 
 # Alias
 alias ls="eza --icons=always"
-alias cd="z"
 
 # Git Aliases
 alias g="git"
