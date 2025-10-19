@@ -18,6 +18,18 @@ This file provides global guidance to Claude Code (claude.ai/code) across all co
   fvm flutter analyze      # Run after changes to check for errors
   ```
 
+## Git
+
+### Commit Messages
+
+- **DO NOT include "Generated with Claude Code" or "Co-Authored-By: Claude" in commit messages** - Keep commit messages clean and professional without attribution footers
+
+## GitHub
+
+### GitHub CLI Usage
+
+- **ALWAYS use `gh` CLI tool for GitHub-related content** - When the user shares GitHub links (PRs, issues, discussions, etc.), use the `gh` command to access the information instead of trying to fetch the URL directly
+
 ## Shell Navigation
 
 ### Directory Navigation
