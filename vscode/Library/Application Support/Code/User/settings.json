@@ -1,7 +1,7 @@
 {
   "workbench.startupEditor": "none",
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.colorTheme": "Catppuccin Latte",
+  "workbench.colorTheme": "Catppuccin Mocha",
   "editor.formatOnSave": true,
   "cSpell.userWords": [
     "autofocus",
