@@ -196,5 +196,5 @@ run = 'layout floating'
 
 # iOS Simulator always opens in floating mode
 [[on-window-detected]]
-if.app-name-regex-substring = 'simulator'
+if.app-name-regex-substring = 'CoreSimulator'
 run = 'layout floating'
