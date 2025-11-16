@@ -24,7 +24,9 @@ echo -ne '\e[6 q'
 preexec() { echo -ne '\e[6 q' ;}
 
 # Environment variables (putting these first)
-export ANDROID_HOME=$HOME/Library/Android/sdk/
+# Android SDK and Gradle on external drive
+export ANDROID_HOME=/Volumes/Yogi7y/app-data/android/android-sdk
+export GRADLE_USER_HOME=/Volumes/Yogi7y/app-data/android/gradle
 
 # Initialize DVM early
 if [[ -f ~/.dvm/scripts/dvm ]]; then
@@ -40,6 +42,7 @@ fi
 export PATH="$PATH:$ANDROID_HOME/emulator"
 export PATH="$PATH:$ANDROID_HOME/platform-tools/"
 export PATH="$PATH:$HOME/.pub-cache/bin"
+export PUB_CACHE="/Volumes/Yogi7y/app-data/flutter/pub-cache"
 
 # Alias
 alias ls="eza --icons=always"
