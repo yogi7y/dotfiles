@@ -23,11 +23,6 @@ echo -ne '\e[6 q'
 # Use steady beam shape cursor for each new prompt.
 preexec() { echo -ne '\e[6 q' ;}
 
-# Environment variables (putting these first)
-# Android SDK and Gradle on external drive
-export ANDROID_HOME=/Volumes/Yogi7y/app-data/android/android-sdk
-export GRADLE_USER_HOME=/Volumes/Yogi7y/app-data/android/gradle
-
 # Initialize DVM early
 if [[ -f ~/.dvm/scripts/dvm ]]; then
   . ~/.dvm/scripts/dvm
@@ -39,10 +34,7 @@ if type brew &>/dev/null; then
 fi
 
 # Path modifications (after DVM but before other tools)
-export PATH="$PATH:$ANDROID_HOME/emulator"
-export PATH="$PATH:$ANDROID_HOME/platform-tools/"
 export PATH="$PATH:$HOME/.pub-cache/bin"
-export PUB_CACHE="/Volumes/Yogi7y/app-data/flutter/pub-cache"
 
 # Alias
 alias ls="eza --icons=always"
@@ -59,8 +51,10 @@ alias gd="git diff"
 alias gsw="git switch"
 
 alias python="python3"
-
 alias lg="lazygit"
+
+# Navigation
+eval "$(zoxide init zsh --cmd cd)"
 
 # Utility
 httpnvim() {
@@ -140,3 +134,10 @@ export SDKMAN_DIR="$HOME/.sdkman"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /Users/yogi/.dart-cli-completion/zsh-config.zsh ]] && . /Users/yogi/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
+
+export PATH="$HOME/.local/bin:$PATH"
