@@ -1,4 +1,8 @@
+# Homebrew binaries
 export PATH="/opt/homebrew/bin:$PATH"
+
+# Use Homebrew's Python 3.13 as default python3
+export PATH="/opt/homebrew/opt/python@3.13/libexec/bin:$PATH"
 # Vi support
 bindkey -v
 
