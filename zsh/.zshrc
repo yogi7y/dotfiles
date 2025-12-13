@@ -1,3 +1,4 @@
+export PATH="/opt/homebrew/bin:$PATH"
 # Vi support
 bindkey -v
 
@@ -70,6 +71,8 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
+eval "$(rbenv init -)"
+
 
 # Plugin sources
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -145,3 +148,4 @@ export PATH="$HOME/.local/bin:$PATH"
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/tools
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"

@@ -29,6 +29,7 @@
     "Lucide",
     "mocktail",
     "openai",
+    "opsz",
     "Parwani",
     "pincode",
     "plpgsql",
@@ -56,7 +57,9 @@
     "utsname",
     "vsync",
     "webp",
+    "wght",
     "writeln",
+    "xxxxl",
     "Yogesh"
   ],
   "cSpell.enabledFileTypes": {
@@ -144,5 +147,6 @@
   "workbench.layoutControl.enabled": false,
   "gitlens.ai.model": "vscode",
   "gitlens.ai.vscode.model": "copilot:gpt-4.1",
-  "html.preview.doubleClickToSwitchToEditor": false
+  "html.preview.doubleClickToSwitchToEditor": false,
+  "git.autofetch": true
 }

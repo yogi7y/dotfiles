@@ -9,6 +9,7 @@ This is a dotfiles repository that uses GNU Stow for symlink management. The rep
 ## Common Commands
 
 ### Installation and Setup
+
 ```bash
 # Initial setup (installs Homebrew packages and symlinks configs)
 ./install.sh
@@ -26,6 +27,7 @@ stow -D nvim   # Unstow a configuration
 ```
 
 ### VSCode Extensions Management
+
 ```bash
 # Update extensions list
 ./vscode/update-extensions.sh
@@ -35,6 +37,7 @@ stow -D nvim   # Unstow a configuration
 ```
 
 ### Python Scripts and Testing
+
 ```bash
 # Run Python tests
 cd scripts/python
@@ -64,6 +67,7 @@ The repository uses a stow-friendly directory structure where each tool has its 
 1. **Symlink Management**: Uses GNU Stow v2.4.1 for managing symlinks. Each directory represents a "package" that gets symlinked to the home directory maintaining the internal structure.
 
 2. **Installation Script**: The `install.sh` script handles:
+
    - Homebrew installation check
    - Package installation (neovim, tmux, zsh, starship, fzf, zoxide, eza, git, lua, stow)
    - Zsh plugin installation (autosuggestions, syntax-highlighting)
@@ -82,12 +86,15 @@ The repository uses a stow-friendly directory structure where each tool has its 
 ## Code Style Guidelines
 
 ### Configuration Comments
+
 **ALWAYS add comments when making configuration changes** to explain what each setting does:
+
 - Add a brief comment above or inline with each configuration option
 - Comments should explain the purpose and effect of the setting
-- Keep comments concise but informative
+- lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
 Examples:
+
 ```lua
 -- Enable relative line numbers for easier navigation
 vim.opt.relativenumber = true
