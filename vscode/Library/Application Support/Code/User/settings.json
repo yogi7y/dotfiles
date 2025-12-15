@@ -148,5 +148,7 @@
   "gitlens.ai.model": "vscode",
   "gitlens.ai.vscode.model": "copilot:gpt-4.1",
   "html.preview.doubleClickToSwitchToEditor": false,
-  "git.autofetch": true
+  "git.autofetch": true,
+  "kotlin.languageServer.enabled": false,
+  "kotlin.debugAdapter.enabled": false
 }
