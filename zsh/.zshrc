@@ -58,8 +58,8 @@ alias gsw="git switch"
 alias python="python3"
 alias lg="lazygit"
 
-# Navigation
-eval "$(zoxide init zsh --cmd cd)"
+# Navigation - only in interactive shells to avoid issues with Claude Code subshells
+[[ $- == *i* ]] && eval "$(zoxide init zsh --cmd cd)"
 
 # Utility
 httpnvim() {
@@ -153,3 +153,4 @@ export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export PATH="/Users/yogi/.shorebird/bin:$PATH"

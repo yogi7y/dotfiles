@@ -81,8 +81,6 @@ The repository uses a stow-friendly directory structure where each tool has its 
 
 5. **tmux Setup**: Uses TPM (Tmux Plugin Manager) installed at `~/.tmux/plugins/tpm`
 
-6. **Shell Navigation**: Use `builtin cd` instead of `cd` for directory navigation. The `cd` command is aliased to zoxide, which may not be available in the shell environment.
-
 ## Code Style Guidelines
 
 ### Configuration Comments
