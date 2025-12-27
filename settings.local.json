@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git:*)",
+      "Bash(gh:*)",
+      "Bash(fvm:*)",
+      "Bash(tree:*)",
+      "Bash(grep:*)",
+      "Bash(bundle:*)",
+      "Bash(echo:*)",
+      "Bash(cat:*)",
+      "Bash(curl:*)",
+      "Bash(npm:*)",
+      "Bash(npx:*)",
+      "Bash(ls:*)",
+      "Bash(find:*)",
+      "Bash(cd:*)",
+      "Bash(Search:*)",
+      "Bash(/Users/yogi/Development/stow/scripts/create-worktree.sh:*)",
+      "Read",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:codewithandrea.com)",
+      "WebFetch(domain:pub.dev)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
+
