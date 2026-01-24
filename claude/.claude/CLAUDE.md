@@ -58,3 +58,10 @@ This file provides global guidance to Claude Code (claude.ai/code) across all co
 ### GitHub CLI Usage
 
 - **ALWAYS use `gh` CLI tool for GitHub-related content** - When the user shares GitHub links (PRs, issues, discussions, etc.), use the `gh` command to access the information instead of trying to fetch the URL directly
+
+### Pull Requests
+
+- **Follow existing PR templates** - Check for `.github/PULL_REQUEST_TEMPLATE.md` or similar templates in the repository and follow their structure
+- **Write a concise summary** - Briefly describe what changed and why (not how)
+- **Include things to verify/checklist if applicable**:
+- **DO NOT include attribution footers** - No "Generated with Claude Code" or similar attribution text
