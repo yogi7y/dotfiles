@@ -1,9 +1,0 @@
-{
-  "id": "5",
-  "subject": "Verify changes in browser",
-  "description": "Run dev server and test all CRUD operations in Chrome",
-  "activeForm": "Testing in browser",
-  "status": "in_progress",
-  "blocks": [],
-  "blockedBy": []
-}

@@ -1,9 +1,0 @@
-{
-  "id": "1",
-  "subject": "Create worktree and database migration",
-  "description": "Phase 1: Create git worktree, write expenses schema migration (003_expenses_v1.sql), update config.toml, update seed.sql, reset Supabase",
-  "activeForm": "Creating worktree and database migration",
-  "status": "completed",
-  "blocks": [],
-  "blockedBy": []
-}
