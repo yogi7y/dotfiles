@@ -1,0 +1,22 @@
+[core]
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true
+    line-numbers = true
+    syntax-theme = Catppuccin Mocha
+    minus-style = syntax "#3d2020"
+    minus-emph-style = syntax "#6e3b20"
+    plus-style = syntax "#1a2a40"
+    plus-emph-style = syntax "#1a3a5c"
+    minus-non-emph-style = syntax "#3d2020"
+    plus-non-emph-style = syntax "#1a2a40"
+    line-numbers-minus-style = "#f0a050"
+    line-numbers-plus-style = "#50a0f0"
+    line-numbers-zero-style = "#6c7086"
+
+[merge]
+    conflictstyle = zdiff3

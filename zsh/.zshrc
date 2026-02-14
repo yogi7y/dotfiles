@@ -6,19 +6,16 @@ if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
 fi
 source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 
+
 # ---------- PATH ----------
 export PATH="$HOME/.local/bin:$PATH"
 
+
 # ---------- Plugins ----------
+zinit light zsh-users/zsh-syntax-highlighting  # Syntax highlighting — colors commands as you type (red = invalid, green = valid)
+zinit light zsh-users/zsh-autosuggestions  # Autosuggestions — suggests commands from your history as you type (press → to accept)
+zinit light zsh-users/zsh-completions  # Completions — better tab completion for hundreds of tools
 
-# Syntax highlighting — colors commands as you type (red = invalid, green = valid)
-zinit light zsh-users/zsh-syntax-highlighting
-
-# Autosuggestions — suggests commands from your history as you type (press → to accept)
-zinit light zsh-users/zsh-autosuggestions
-
-# Completions — better tab completion for hundreds of tools
-zinit light zsh-users/zsh-completions
 
 # ---------- History ----------
 HISTFILE=~/.zsh_history
@@ -28,12 +25,24 @@ setopt SHARE_HISTORY          # share history across all sessions
 setopt HIST_IGNORE_ALL_DUPS   # remove older duplicates
 setopt HIST_IGNORE_SPACE      # don't save commands starting with space
 
+
 # ---------- General Settings ----------
 setopt AUTO_CD                # type a folder name to cd into it
 setopt CORRECT                # suggest corrections for typos
 autoload -Uz compinit && compinit  # enable completion system
 
 
+# ---------- Aliases ----------
+alias ls="eza --icons"
+alias ll="eza -la --icons --git"
+alias lt="eza --tree --level=2 --icons"
+
+alias cat="bat"
+
+
 # ---------- Starship ----------
 eval "$(starship init zsh)"
+
+# ---------- BAT ----------
+export BAT_THEME="Catppuccin Mocha"
 
