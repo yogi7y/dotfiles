@@ -1,0 +1,170 @@
+<<<<<<< HEAD
+{
+  "project_info": {
+    "project_number": "524674459663",
+    "project_id": "healthcare-development",
+    "storage_bucket": "healthcare-development.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:524674459663:android:68381fa8f6e0c7a7599b7a",
+        "android_client_info": {
+          "package_name": "com.supportmate.carer.stg"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "524674459663-4tcbgbq1genqd19es7m5fd0l0auufhbs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.supportmate.carer.stg",
+            "certificate_hash": "11350b75ac8e835496578d078a09ebe4b05f7241"
+          }
+        },
+        {
+          "client_id": "524674459663-a3eqfer6vej8i9537ntrvrhcqajacqpf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNFNI0V7JKYu7roCS28KIVzxK7PWwDA8A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "524674459663-a3eqfer6vej8i9537ntrvrhcqajacqpf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:524674459663:android:d4ab4ebd4cb085c9599b7a",
+        "android_client_info": {
+          "package_name": "com.supportmate.client.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "524674459663-a3eqfer6vej8i9537ntrvrhcqajacqpf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNFNI0V7JKYu7roCS28KIVzxK7PWwDA8A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "524674459663-a3eqfer6vej8i9537ntrvrhcqajacqpf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
+||||||| 25b21d3
+=======
+{
+  "project_info": {
+    "project_number": "524674459663",
+    "project_id": "healthcare-development",
+    "storage_bucket": "healthcare-development.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:524674459663:android:f46a53afa13e2763599b7a",
+        "android_client_info": {
+          "package_name": "com.supportmate.carer.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "524674459663-l5keboobsae41k3sgf82la21o6pq9gaq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.supportmate.carer.dev",
+            "certificate_hash": "11350b75ac8e835496578d078a09ebe4b05f7241"
+          }
+        },
+        {
+          "client_id": "524674459663-a3eqfer6vej8i9537ntrvrhcqajacqpf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNFNI0V7JKYu7roCS28KIVzxK7PWwDA8A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "524674459663-a3eqfer6vej8i9537ntrvrhcqajacqpf.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "524674459663-l1vcq1h7a7c9h9k5kp96ev44arl0utc1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.supportmate.cliend.dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:524674459663:android:d4ab4ebd4cb085c9599b7a",
+        "android_client_info": {
+          "package_name": "com.supportmate.client.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "524674459663-a3eqfer6vej8i9537ntrvrhcqajacqpf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNFNI0V7JKYu7roCS28KIVzxK7PWwDA8A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "524674459663-a3eqfer6vej8i9537ntrvrhcqajacqpf.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "524674459663-l1vcq1h7a7c9h9k5kp96ev44arl0utc1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.supportmate.cliend.dev"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
+>>>>>>> develop

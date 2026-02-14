@@ -1,0 +1,48 @@
+# _Exception: Exception: Invalid image data
+
+**Issue ID:** 7124748655
+**Project:** platinumrx-app
+**Date:** 20/01/2026, 11:35:51
+## Issue Summary
+Image Loading Failure Due to Invalid Data
+**What's wrong:** Image loading failed with **Invalid image data** exception during codec instantiation.
+**In the trace:** A **DeepLinkNotFoundException** occurred concurrently, suggesting potential navigation or state issues.
+**Possible cause:** The image data being loaded via **FileImage** might be **corrupted** or an **incomplete download**.
+
+## Tags
+
+- **dart:** Dart 3.7.2 (stable)
+- **dart.name:** Dart
+- **device:** CPH2263
+- **device.class:** medium
+- **device.family:** CPH2263
+- **dist:** 289
+- **environment:** production
+- **event.environment:** dart
+- **event.origin:** flutter
+- **flutter.name:** Flutter
+- **level:** error
+- **os:** Android 13
+- **os.build:** CPH2263_11_F.74
+- **os.name:** Android
+- **os.rooted:** no
+- **release:** in.platinumrx@2.0.14+289
+- **user:** id:6640930
+
+## Exception
+
+### Exception 1
+**Type:** _Exception
+**Value:** Exception: Invalid image data
+
+#### Stacktrace
+
+```
+ _futurize in painting.dart [Line 7898] (Not in app)
+ ImageDescriptor.encoded in painting.dart [Line 7692] (Not in app)
+ instantiateImageCodecWithSize in painting.dart [Line 2546] (Not in app)
+ PaintingBinding.instantiateImageCodecWithSize in binding.dart [Line 147] (Not in app)
+ FileImage._loadAsync in image_provider.dart [Line 1623] (Not in app)
+ Unknown function in <asynchronous suspension> [Line null] (Not in app)
+ MultiFrameImageStreamCompleter._handleCodecReady in image_stream.dart [Line 1048] (Not in app)
+```

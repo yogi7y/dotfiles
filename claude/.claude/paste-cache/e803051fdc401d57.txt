@@ -1,0 +1,122 @@
+# Category Detail — Feature Requirements
+
+Companion to the Expenses app. Covers the category detail page — what you see when you drill into a specific category.
+
+---
+
+## Purpose
+
+The category detail page answers two questions: **"How much am I spending here?"** and **"What are my recent transactions?"** It gives a focused view of spending patterns for a single category over configurable time ranges.
+
+---
+
+## Page Layout (Top to Bottom)
+
+### 1. Category Header
+
+| Element | Notes |
+|---------|-------|
+| **Category name** | e.g., "Dining Out" |
+| **Description** | Shown if populated |
+| **Parent area** | e.g., "Food" — displayed as a subtle breadcrumb or label |
+| **Edit action** | Opens existing category edit flow |
+
+---
+
+### 2. Summary Cards
+
+Three cards displayed in a horizontal row.
+
+| Card | Content | Details |
+|------|---------|---------|
+| **This Month** | Total spent in the current calendar month | Show comparison to last month as arrow (↑/↓) with percentage change. Green for decrease, red for increase. Neutral if no previous data. |
+| **Monthly Average** | Average monthly spend over the selected time range | Recalculates when the time range dropdown changes. |
+| **Transaction Frequency** | Average transactions per month + average amount per transaction | Format: `~12 transactions/month · ₹420 avg` — see calculation below. |
+
+**Transaction Frequency Calculation:**
+- Count total transactions in the selected time range.
+- Divide by number of months in the range.
+- Average transaction amount = total spent ÷ total transaction count.
+- Round frequency to the nearest whole number.
+
+---
+
+### 3. Time Range Dropdown
+
+Controls the chart (Section 4) and the Monthly Average and Transaction Frequency summary cards (Section 2). Does **not** affect the "This Month" card or the Recent Transactions list.
+
+| Option | Range |
+|--------|-------|
+| Last 3 months | Current month + 2 prior |
+| **Last 6 months** | Current month + 5 prior **(default)** |
+| Last 12 months | Current month + 11 prior |
+| From inception | All available data |
+
+Positioned between the summary cards and the chart. Right-aligned or inline — keep it compact.
+
+---
+
+### 4. Spending Chart
+
+Month-over-month spending visualisation with a toggle between two chart types.
+
+| Chart Type | Notes |
+|------------|-------|
+| **Bar chart** | Default. Each bar = one month's total spend. Better for comparing discrete months. |
+| **Line chart** | Toggle option. Same data, line with data points. Better for reading trends. |
+
+**Chart details:**
+- X-axis: months (abbreviated — Jan, Feb, Mar, etc.)
+- Y-axis: amount in ₹
+- Data matches the selected time range
+- Toggle is a small icon or segmented control near the chart, not a separate dropdown
+- Current month's bar/point should be visually distinct (e.g., different shade or outlined) since it's partial data
+
+---
+
+### 5. Payment Instrument Breakdown
+
+Shows how spending in this category is distributed across payment methods.
+
+| Element | Notes |
+|---------|-------|
+| **Format** | Horizontal stacked bar or simple list with percentages — keep it compact |
+| **Data** | Percentage of total spend per payment instrument within the selected time range |
+| **Example** | UPI 65% · Credit Card 25% · Cash 10% |
+
+Only show instruments with >0% share. If all transactions use the same instrument, show a single line — no chart needed.
+
+---
+
+### 6. Recent Transactions
+
+List of the most recent transactions in this category. Always shows the latest transactions regardless of time range selection.
+
+| Element | Notes |
+|---------|-------|
+| **Count** | Last 20 transactions |
+| **Sort** | Most recent first |
+| **Per row** | Date, description/merchant, amount, payment instrument |
+| **Interaction** | Each row is clickable — navigates to the full transaction detail |
+| **Empty state** | "No transactions yet" with muted styling |
+
+---
+
+## Edge Cases
+
+| Scenario | Behaviour |
+|----------|-----------|
+| **Category with zero transactions** | Summary cards show ₹0 / "—". Chart area shows empty state ("No spending data yet"). Transaction list shows empty state. |
+| **Category with <3 months of data** | Time range options shorter than available data still work — show whatever exists. "Last 6 months" with only 2 months of data shows 2 bars/points. |
+| **Current month is partial** | "This Month" card always shows the running total. Chart marks the current month as partial (visual distinction). |
+| **"This Month" comparison when no prior month** | Show the amount without a comparison arrow. No "↑0%" or fake data. |
+
+---
+
+## What's Out of Scope
+
+- Budget or spending limits per category
+- Tag-level analytics within a category
+- Cross-category comparisons
+- Export or share functionality
+- Editing transactions from this view (navigate to transaction detail instead)

@@ -1,0 +1,92 @@
+Reloaded 349 of 4535 libraries in 2,571ms (compile: 742 ms, reload: 1147 ms, reassemble: 547 ms).
+Restarted application in 1,944ms.
+I/FLTFireMsgService( 6990): FlutterFirebaseMessagingBackgroundService started!
+[log] Logger crash reporter initialized
+[log] Calling API:
+      IRequest(method: HttpMethod.get, path: /config/fetchConfig/, body: {}, queryParams: {key: REFERRAL_CONFIG}, headers: {}, formData: null)
+[log] Calling API:
+      IRequest(method: HttpMethod.get, path: users/fetchUserDetails, body: {}, queryParams: {}, headers: {}, formData: null)
+[log] Calling API:
+      IRequest(method: HttpMethod.post, path: /users/appData, body: {platform: ANDROID, firebaseAppInstanceId: 6ddd9f0ad85b7be3c03b5705ffb4ccee, appsFlyerInstanceId: 1769233060249-3336390145105391568, meta: {advertisingId: 0386ff29-6596-4690-a838-e9df63eb024b, appVersion: 2.0.14}}, queryParams: {}, headers: {}, formData: null)
+[log] Calling API:
+      IRequest(method: HttpMethod.post, path: /users/appData, body: {platform: ANDROID, firebaseAppInstanceId: 6ddd9f0ad85b7be3c03b5705ffb4ccee, appsFlyerInstanceId: 1769233060249-3336390145105391568, meta: {advertisingId: 0386ff29-6596-4690-a838-e9df63eb024b, appVersion: 2.0.14}}, queryParams: {}, headers: {}, formData: null)
+[log] Logger: User ID set: 1077
+[DEEPLINK_PRX] AppLinksService.init() called
+[log] Calling API:
+      IRequest(method: HttpMethod.get, path: /wallet, body: {}, queryParams: {}, headers: {}, formData: null)
+[log] Calling API:
+      IRequest(method: HttpMethod.get, path: cohorts/fetchCohort/V1, body: {}, queryParams: {category: home}, headers: {}, formData: null)
+[log] Calling API:
+      IRequest(method: HttpMethod.get, path: /config/fetchConfig/, body: {}, queryParams: {key: APP_CONFIG}, headers: {}, formData: null)
+[log] Calling API:
+      IRequest(method: HttpMethod.get, path: orders/v3/fetchOrders, body: {}, queryParams: {limit: 10, skip: 0}, headers: {}, formData: null)
+[log] Calling API:
+      IRequest(method: HttpMethod.post, path: /pdp/advantageMedicine, body: {}, queryParams: {origin: recently_viewed}, headers: {}, formData: null)
+[log] Calling API:
+      IRequest(method: HttpMethod.post, path: /pdp/advantageMedicine, body: {}, queryParams: {origin: buy_again}, headers: {}, formData: null)
+I/in.platinumrx( 6990): Background concurrent mark compact GC freed 13MB AllocSpace bytes, 11(220KB) LOS objects, 49% free, 12MB/24MB, paused 237us,18.226ms total 417.102ms
+[log] Calling API:
+      IRequest(method: HttpMethod.get, path: cart/v2/fetchActiveCart, body: {}, queryParams: {fetchDigitisationStatus: 1}, headers: {}, formData: null)
+W/WindowOnBackDispatcher( 6990): OnBackInvokedCallback is not enabled for the application.
+W/WindowOnBackDispatcher( 6990): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+W/FLTFireMsgService( 6990): Attempted to start a duplicate background isolate. Returning...
+[WebEngageAnalyticsProvider] app_activate: {}
+[DEEPLINK_PRX] onAppInitialized() called, pendingDeepLink: null
+[DEEPLINK_PRX] No pending deeplink to process after app init
+[DEEPLINK_PRX] DashboardScreen._authStateChanges: isUserLoggedIn=false, mounted=true
+[DEEPLINK_PRX] DashboardScreen._authStateChanges: user logged out, resetting state
+[log] Calling API:
+      IRequest(method: HttpMethod.get, path: /config/fetchConfig/, body: {}, queryParams: {key: APP_CONFIG}, headers: {}, formData: null)
+[log] Calling API:
+      IRequest(method: HttpMethod.get, path: orders/v3/fetchOrders, body: {}, queryParams: {limit: 10, skip: 0}, headers: {}, formData: null)
+[log] Calling API:
+      IRequest(method: HttpMethod.get, path: cohorts/fetchCohort/V1, body: {}, queryParams: {category: home}, headers: {}, formData: null)
+[log] Calling API:
+      IRequest(method: HttpMethod.get, path: cart/v2/fetchActiveCart, body: {}, queryParams: {fetchDigitisationStatus: 1}, headers: {}, formData: null)
+W/in.platinumrx( 6990): No such thread for suspend: 0x72fa5f4e98:SentryExecutorServiceThreadFactory-0
+W/in.platinumrx( 6990): No such thread for suspend: 0x72fa5f4e98:ExecutorService
+[log] Calling API:
+      IRequest(method: HttpMethod.post, path: /pdp/advantageMedicine, body: {}, queryParams: {origin: cart}, headers: {}, formData: null)
+[log] Calling API:
+      IRequest(method: HttpMethod.post, path: /pdp/advantageMedicine, body: {}, queryParams: {origin: under_99}, headers: {}, formData: null)
+W/in.platinumrx( 6990): Suspending all threads took: 9.869ms
+I/in.platinumrx( 6990): NativeAlloc concurrent mark compact GC freed 11MB AllocSpace bytes, 4(208KB) LOS objects, 49% free, 13MB/26MB, paused 12.322ms,68.488ms total 1.497s
+W/System  ( 6990): A resource failed to call close.
+[log] Calling API:
+      IRequest(method: HttpMethod.get, path: /google/geoCodeDetails, body: {}, queryParams: {latlng: 37.422,-122.084}, headers: {}, formData: null)
+[log] Calling API:
+      IRequest(method: HttpMethod.get, path: pdp/pincode/560010, body: {}, queryParams: {}, headers: {}, formData: null)
+I/flutter ( 6990): ----------------FIREBASE CRASHLYTICS----------------
+I/flutter ( 6990): The following exception was thrown 400:
+I/flutter ( 6990): Exception: Server error occured as API throws 400 error
+I/flutter ( 6990): #0      FirebaseCrashlyticsReporter.recordCustomServerCrash (package:platinum_rx/src/services/crash_reporter/crash_reporter_service.dart:72:67)
+I/flutter ( 6990): <asynchronous suspension>
+I/flutter ( 6990): ----------------------------------------------------
+[WebEngageAnalyticsProvider] Logout: {User ID: 1077}
+[WebEngageAnalyticsProvider] Logging out user
+[DEEPLINK_PRX] DashboardScreen._authStateChanges: isUserLoggedIn=false, mounted=true
+[DEEPLINK_PRX] DashboardScreen._authStateChanges: user logged out, resetting state
+[log] Calling API:
+      IRequest(method: HttpMethod.post, path: /pdp/advantageMedicine, body: {}, queryParams: {origin: recently_viewed}, headers: {}, formData: null)
+[log] Calling API:
+      IRequest(method: HttpMethod.post, path: /pdp/advantageMedicine, body: {}, queryParams: {origin: buy_again}, headers: {}, formData: null)
+[log] Calling API:
+      IRequest(method: HttpMethod.get, path: cohorts/fetchCohort/V1, body: {}, queryParams: {category: home}, headers: {}, formData: null)
+[DEEPLINK_PRX] onAppInitialized() called, pendingDeepLink: null
+[DEEPLINK_PRX] No pending deeplink to process after app init
+[DEEPLINK_PRX] DashboardScreen._authStateChanges: isUserLoggedIn=false, mounted=true
+[DEEPLINK_PRX] DashboardScreen._authStateChanges: user logged out, resetting state
+[log] Calling API:
+      IRequest(method: HttpMethod.get, path: cohorts/fetchCohort/V1, body: {}, queryParams: {category: home}, headers: {}, formData: null)
+W/in.platinumrx( 6990): Verification of void com.google.android.gms.location.LastLocationRequest.<clinit>() took 143.531ms (55.74 bytecodes/s) (0B arena alloc)
+I/flutter ( 6990): Error initiating Truecaller login: PlatformException(ACTIVITY_NOT_FOUND, No Activity found to handle intent { truecallersdk://truesdk/web_verify?type=btmsheet&requestNonce=e5eaf7ad-70bd-4c5f-b1db-2215fa132b2a&partnerKey=vsI4P5c89e2440b7a4112ae41bff0b21a7234&partnerName=PlatinumRx&lang=en&privacyUrl=https://www.platinumrx.in/privacy-policy&termsUrl=https://www.platinumrx.in/legal-policy&loginPrefix=continuewith&loginSuffix=loginsignup&ctaPrefix=continue&ctaColor=%23fc5a5a&ctaTextColor=%23FFFFFF&btnShape=rect&skipOption=useanothermethod&ttl=30000 }, null, null). Truecaller not available. Invoking Truecaller fail callback.
+I/in.platinumrx( 6990): Background young concurrent mark compact GC freed 10MB AllocSpace bytes, 15(876KB) LOS objects, 58% free, 10MB/26MB, paused 307us,741us total 413.210ms
+W/System  ( 6990): A resource failed to call AbstractCursor.close.
+[log] Calling API:
+      IRequest(method: HttpMethod.get, path: /google/geoCodeDetails, body: {}, queryParams: {latlng: 37.422,-122.084}, headers: {}, formData: null)
+I/flutter ( 6990): ----------------FIREBASE CRASHLYTICS----------------
+I/flutter ( 6990): The following exception was thrown 400:
+I/flutter ( 6990): Exception: Server error occured as API throws 400 error
+I/flutter ( 6990): #0      FirebaseCrashlyticsReporter.recordCustomServerCrash (package:platinum_rx/src/services/crash_reporter/crash_reporter_service.dart:72:67)
+I/flutter ( 6990): <asynchronous suspension>
+I/flutter ( 6990): ----------------------------------------------------

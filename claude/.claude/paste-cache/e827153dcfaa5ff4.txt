@@ -1,0 +1,13 @@
+TypeError: type 'String' is not a subtype of type 'List<dynamic>' in type cast
+#0      new MedicineModel.fromJson (package:platinum_rx/src/features/medicine/data/models/medicine_model.dart:108)
+#1      new MedicineDataModel.fromMap (package:platinum_rx/src/features/medicine/data/models/medicine_data.dart:32)
+#2      SerializationMixin.serializeFromMap (package:platinum_rx/src/features/medicine/data/repository/medicine_repository.dart:191)
+#3      MedicineRepositoryImpl.getMedicineDetails.<fn> (package:platinum_rx/src/features/medicine/data/repository/medicine_repository.dart:38)
+#4      Result.map (package:platinum_rx/src/core/networking/result.dart:18)
+#5      MedicineRepositoryImpl.getMedicineDetails (package:platinum_rx/src/features/medicine/data/repository/medicine_repository.dart:37)
+#6 (<asynchronous suspension>)
+#7      MedicineUseCase.getMedicineDetails (package:platinum_rx/src/features/medicine/domain/use_case/medicine_use_case.dart:24)
+#8 (<asynchronous suspension>)
+#9      medicineDetailProvider.<fn> (package:platinum_rx/src/features/medicine/presentation/providers/medicine_detail_provider.dart:11)
+#10 (<asynchronous suspension>)
+#11      FutureHandlerProviderElementMixin.handleFuture.<fn>.<fn> (package:riverpod/src/async_notifier/base.dart:355)

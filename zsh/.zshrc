@@ -38,6 +38,12 @@ if type brew &>/dev/null; then
     FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 fi
 
+# Initialize Zsh completion system (required for zstyle configurations)
+autoload -Uz compinit && compinit
+
+# Case-insensitive path completion: 'doc<tab>' matches 'Documents/', 'DOC/', etc.
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+
 # Path modifications (after DVM but before other tools)
 export PATH="$PATH:$HOME/.pub-cache/bin"
 

@@ -1,0 +1,9 @@
+{
+  "id": "3",
+  "subject": "Build API routes and React Query hooks",
+  "description": "Phase 3: Build all API routes (areas, categories, payment-instruments, expenses, tags, overview, trends) and React Query hooks",
+  "activeForm": "Building API routes and hooks",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

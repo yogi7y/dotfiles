@@ -1,0 +1,9 @@
+{
+  "id": "3",
+  "subject": "Create React Query hooks",
+  "description": "Create src/hooks/use-tasks.ts and src/hooks/use-projects.ts",
+  "activeForm": "Creating React Query hooks",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

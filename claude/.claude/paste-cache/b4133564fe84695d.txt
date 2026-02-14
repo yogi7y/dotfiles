@@ -1,0 +1,19 @@
+Launching lib/main_staging.dart on iPhone 16 Plus in debug mode...
+Xcode build done.                                           17.0s
+Connecting to VM Service at ws://127.0.0.1:58342/dSooe5pZZKs=/ws
+Connected to the VM Service.
+[mainCommon] App starting with config: EnvConfig: supabaseUrl: https://nawtaxuivpuivxidoslm.supabase.co
+             supabaseAnonKey: [REDACTED]
+             googleClientId: [REDACTED]
+[ERROR:flutter/runtime/dart_vm_initializer.cc(40)] Unhandled Exception: [core/no-app] No Firebase App '[DEFAULT]' has been created - call Firebase.initializeApp()
+#0      MethodChannelFirebase.app (package:firebase_core_platform_interface/src/method_channel/method_channel_firebase.dart:190:5)
+#1      Firebase.app (package:firebase_core/src/firebase.dart:79:41)
+#2      FirebaseCrashlytics.instance (package:firebase_crashlytics/src/firebase_crashlytics.dart:33:55)
+#3      mainCommon.<anonymous closure> (package:mobile/main.dart:67:39)
+#4      _RootZone.runBinary (dart:async/zone.dart:1854:54)
+#5      runZonedGuarded.<anonymous closure> (dart:async/zone.dart:2002:22)
+#6      _Zone._processUncaughtError (dart:async/zone.dart:1178:14)
+#7      _CustomZone.handleUncaughtError (dart:async/zone.dart:1399:5)
+#8      Future._propagateToListeners (dart:async/future_impl.dart:886:24)
+#9      Future._completeErrorObject (dart:async/future_impl.dart:738:5)
+#10     Future._completeError (dart:async/future_impl.dart:<…>

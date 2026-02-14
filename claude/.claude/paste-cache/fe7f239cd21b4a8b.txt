@@ -1,0 +1,42 @@
+  Future<GoogleCalendarTokens?> signIn() async {
+    try {
+      debugPrint('=== Google Sign-In Debug ===');
+      debugPrint('Scopes: ${_googleSignIn.scopes}');
+      debugPrint('ServerClientId: ${_googleSignIn.serverClientId}');
+
+      final account = await _googleSignIn.signIn();
+
+      debugPrint('Account: $account');
+      debugPrint('Email: ${account?.email}');
+      debugPrint('ServerAuthCode: ${account?.serverAuthCode}');
+
+      if (account == null) {
+        debugPrint('Sign-in cancelled by user');
+        return null; // User cancelled
+      }
+
+      // Check if serverAuthCode is available (indicates scope was granted)
+      if (account.serverAuthCode == null) {
+        debugPrint('Calendar permission not granted - serverAuthCode is null');
+        // Sign out to allow user to try again with correct permissions
+        await _googleSignIn.signOut();
+        throw const GoogleSignInScopeException(
+          'Calendar permission is required. Please try again and grant calendar access.',
+        );
+      }
+
+      _currentUser = account;
+
+      return GoogleCalendarTokens(
+        serverAuthCode: account.serverAuthCode,
+        email: account.email,
+        displayName: account.displayName,
+        photoUrl: account.photoUrl,
+      );
+    } catch (e, stackTrace) {
+      debugPrint('=== Google Sign-In Error ===');
+      debugPrint('Error: $e');
+      debugPrint('StackTrace: $stackTrace');
+      rethrow;
+    }
+  }

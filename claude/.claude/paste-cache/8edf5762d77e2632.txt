@@ -1,0 +1,44 @@
+{
+  "success": 1,
+  "data": {
+    "campaign": {
+      "id": 7,
+      "name": "default",
+      "userType": [],
+      "minAverageOrderValue": 10000,
+      "maxAverageOrderValue": null,
+      "therapeuticClass": [],
+      "isNewUser": false,
+      "priority": 100,
+      "lastOrderDaysMin": 90,
+      "lastOrderDaysMax": 12000,
+      "category": "home",
+      "cohortType": "",
+      "banner1": {
+        "bannerUrl": "https://platinumrx.gumlet.io/meds-prescription/18c7630c-5e12-41a3-a01f-7ce98a9864a8.jpeg",
+        "bannerUrl2": "https://cdn.platinumrx.in/meds-prescription/7b109b9d-08e0-4154-b22a-7afa291db103.png",
+        "desktopUrl": "https://cdn.platinumrx.in/meds-prescription/75bc42c9-aa26-4850-8b40-7f8812f759e6.png",
+        "ctaLocation": "homeScreen",
+        "shadowColor": "#FFD0C0",
+        "gradientColor": "#FFF2EE",
+        "desktopShadowColor": "#FFD0C0",
+        "desktopGradientColor": "#FFF2EE"
+      },
+      "banner2": "",
+      "banner3": "",
+      "banner2json": null,
+      "banner3json": null,
+      "reorderBanner": {},
+      "configs": {
+        "bottom_nav_button": {
+          "deep_link": "prx://loyalty",
+          "image_url": "https://cdn.platinumrx.in/meds-prescription/1be75049-da14-4e8e-9a0f-a3b36f48a3a6.png",
+          "is_enabled": true
+        }
+      },
+      "createdAt": "2025-07-29T04:24:33.672Z",
+      "updatedAt": "2025-12-23T23:54:22.703Z",
+      "deletedAt": null
+    }
+  }
+}

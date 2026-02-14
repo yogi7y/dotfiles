@@ -1,0 +1,9 @@
+{
+  "id": "1",
+  "subject": "Create TypeScript types with Zod validation",
+  "description": "Create src/types/database.ts with Zod schemas for Task, Project, CreateTask, UpdateTask",
+  "activeForm": "Creating Zod schemas",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

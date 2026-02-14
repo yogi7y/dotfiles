@@ -1,0 +1,67 @@
+{
+  "status": 200,
+  "message": "success",
+  "error": {},
+  "data": [
+    {
+      "client_id": 5,
+      "name": "nancy chou",
+      "gender": "Female",
+      "emergency_contacts": []
+    },
+    {
+      "client_id": 7,
+      "name": "Kate Galvin",
+      "gender": "Female",
+      "emergency_contacts": []
+    },
+    {
+      "client_id": 14,
+      "name": "Lio Mathew",
+      "gender": "Male",
+      "emergency_contacts": [
+        {
+          "client_id": 14,
+          "name": "Mr Test test",
+          "email": "test@test.com",
+          "mobile": "9999898998",
+          "relation": "Friend"
+        }
+      ]
+    },
+    {
+      "client_id": 16,
+      "name": "Robert Carlos",
+      "gender": "Male",
+      "emergency_contacts": [
+        {
+          "client_id": 16,
+          "name": "Mr Rob Carlos Jr",
+          "email": "test@test.com",
+          "mobile": "0458778856",
+          "relation": "Son"
+        }
+      ]
+    },
+    {
+      "client_id": 19,
+      "name": "Test t test",
+      "gender": "Male",
+      "emergency_contacts": []
+    },
+    {
+      "client_id": 20,
+      "name": "Ashley Kate",
+      "gender": "Female",
+      "emergency_contacts": [
+        {
+          "client_id": 20,
+          "name": "Mr Caleb Kurian",
+          "email": "caleb@test.com",
+          "mobile": "0466998856",
+          "relation": "Brother"
+        }
+      ]
+    }
+  ]
+}

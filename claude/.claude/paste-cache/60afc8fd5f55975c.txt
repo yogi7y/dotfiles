@@ -1,0 +1,19 @@
+Restarted application in 386ms.
+[mainCommon] App starting with config: EnvConfig: supabaseUrl: https://nawtaxuivpuivxidoslm.supabase.co
+             supabaseAnonKey: [REDACTED]
+             googleClientId: [REDACTED]
+[LogCrashReporter] init
+[Analytics] init
+[PostHogAnalyticsService] PostHog initialized with host: https://us.i.posthog.com
+[Analytics] track: screen_viewed | {screen_name: /}
+[PostHogAnalyticsService] AnalyticsEvent{name: screen_viewed, screenName: /, properties: {screen_name: /}}
+[stow] ✅ Supabase initialized
+[stow]    URL: https://nawtaxuivpuivxidoslm.supabase.co
+[Analytics] track: screen_viewed | {screen_name: login_screen}
+[PostHogAnalyticsService] AnalyticsEvent{name: screen_viewed, screenName: login_screen, properties: {screen_name: login_screen}}
+flutter: supabase.supabase_flutter: INFO: ***** Supabase init completed *****
+[Analytics] track: button_clicked | {screen_name: login_screen, cta: sign_in_google}
+[PostHogAnalyticsService] AnalyticsEvent{name: button_clicked, screenName: login_screen, properties: {screen_name: login_screen, cta: sign_in_google}}
+[stow] ✅ Google Sign In successful
+[stow]    Email: yogeshparwani99.yp@gmail.com
+[StowSnackbar] AuthApiException(message: Unacceptable audience in id_token: [704995028598-7c1vhcsk71ub2veav4r52u32cu51u3e9.apps.googleusercontent.com], statusCode: 400, code: null)

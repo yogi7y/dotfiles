@@ -34,6 +34,8 @@
     "pincode",
     "plpgsql",
     "postalpincode",
+    "Posthog",
+    "prefs",
     "Pressable",
     "psql",
     "pubspec",
@@ -43,6 +45,7 @@
     "riverpod",
     "rxdart",
     "shadcn",
+    "signup",
     "sqflite",
     "squircle",
     "strikethrough",
@@ -53,18 +56,23 @@
     "tearoffs",
     "todos",
     "Tokenable",
+    "Truecaller",
     "unawaited",
+    "unorganised",
+    "usecase",
     "utsname",
     "vsync",
     "webp",
     "wght",
     "writeln",
     "xxxxl",
-    "Yogesh"
+    "Yogesh",
   ],
   "cSpell.enabledFileTypes": {
     "*": true,
-    "markdown": true
+    "markdown": true,
+    "json": false,
+    "dotenv": false,
   },
   "cSpell.ignorePaths": [
     "package-lock.json",
@@ -74,10 +82,10 @@
     ".git/{index,*refs,*HEAD}",
     ".vscode",
     ".vscode-insiders",
-    "*.g.dart"
+    "*.g.dart",
   ],
   "extensions.experimental.affinity": {
-    "asvetliakov.vscode-neovim": 1
+    "asvetliakov.vscode-neovim": 1,
   },
   "dart.debugExternalPackageLibraries": false,
   "dart.debugSdkLibraries": false,
@@ -98,21 +106,21 @@
     "presentation": "layout",
     "network": "connection",
     "features": "project",
-    "domain": "class"
+    "domain": "class",
   },
   "github.copilot.enable": {
     "*": true,
     "plaintext": false,
     "markdown": true,
-    "scminput": false
+    "scminput": false,
   },
   "workbench.colorCustomizations": {
-    "[Material Theme Palenight High Contrast]": {}
+    "[Material Theme Palenight High Contrast]": {},
   },
   "debug.inlineValues": "on",
   "go.useLanguageServer": true,
   "gopls": {
-    "formatting.gofumpt": true
+    "formatting.gofumpt": true,
   },
   "testing.openTesting": "neverOpen",
   "github.copilot.editor.enableAutoCompletions": true,
@@ -123,25 +131,25 @@
   "workbench.editor.showTabs": "none",
   "editor.minimap.enabled": false,
   "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "editor.inlineSuggest.edits.experimental.enabled": false,
   "testing.automaticallyOpenTestResults": "neverOpen",
   "vim.useSystemClipboard": true,
   "vim.overrideCopy": false,
   "[yaml]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "dart.checkForSdkUpdates": false,
   "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "dart.closeDevTools": "ifOpened",
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "window.commandCenter": false,
   "workbench.layoutControl.enabled": false,
@@ -150,5 +158,11 @@
   "html.preview.doubleClickToSwitchToEditor": false,
   "git.autofetch": true,
   "kotlin.languageServer.enabled": false,
-  "kotlin.debugAdapter.enabled": false
+  "kotlin.debugAdapter.enabled": false,
+  "codeium.enableCodeLens": false,
+  "update.showReleaseNotes": false,
+  "csv.enabled": true,
+  "git.blame.editorDecoration.enabled": true,
+  "editor.accessibilitySupport": "off",
+  "chat.viewSessions.orientation": "stacked",
 }

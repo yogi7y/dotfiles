@@ -1,0 +1,9 @@
+{
+  "id": "5",
+  "subject": "Build analytics UI",
+  "description": "Phase 5: Build Overview screen with charts, Trends screen, wire up month selector and filters",
+  "activeForm": "Building analytics UI",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

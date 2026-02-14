@@ -1,0 +1,22 @@
+forward-logs-shared.ts:95 Download the React DevTools for a better development experience: https://react.dev/link/react-devtools
+forward-logs-shared.ts:95 [HMR] connected
+tasks?projectId=inbox:1  Failed to load resource: the server responded with a status of 500 (Internal Server Error)
+tasks?view=inbox:1  Failed to load resource: the server responded with a status of 500 (Internal Server Error)
+tasks?view=inbox:1  Failed to load resource: the server responded with a status of 500 (Internal Server Error)
+tasks?projectId=inbox:1  Failed to load resource: the server responded with a status of 500 (Internal Server Error)
+tasks?view=inbox:1  Failed to load resource: the server responded with a status of 500 (Internal Server Error)
+tasks?projectId=inbox:1  Failed to load resource: the server responded with a status of 500 (Internal Server Error)
+use-tasks.ts:16  GET http://localhost:3003/api/tasks?view=inbox 500 (Internal Server Error)
+fetchTasks @ use-tasks.ts:16
+useTasks.useQuery @ use-tasks.ts:77
+fetchFn @ query.ts:474
+run @ retryer.ts:155
+(anonymous) @ retryer.ts:201
+use-tasks.ts:24  GET http://localhost:3003/api/tasks?projectId=inbox 500 (Internal Server Error)
+fetchTasksByProject @ use-tasks.ts:24
+useTasksByProject.useQuery @ use-tasks.ts:85
+fetchFn @ query.ts:474
+run @ retryer.ts:155
+(anonymous) @ retryer.ts:201
+(index):1 The resource http://localhost:3003/_next/static/media/caa3a2e1cccd8315-s.p.853070df.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+(index):1 The resource http://localhost:3003/_next/static/media/797e433ab948586e-s.p.dbea232f.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.

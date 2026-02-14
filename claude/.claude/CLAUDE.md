@@ -47,6 +47,10 @@ This file provides global guidance to Claude Code (claude.ai/code) across all co
 - **Use @immutable annotation** - All widgets and data classes should be immutable
 - **Use const constructors wherever possible** - Improves performance by reusing widget instances
 
+## Supabase
+
+- **NEVER push to remote Supabase** - Only use local Supabase instance for development. Never run `supabase db push` or any command that modifies the remote/production database.
+
 ## Git
 
 ### Commit Messages
@@ -65,3 +69,7 @@ This file provides global guidance to Claude Code (claude.ai/code) across all co
 - **Write a concise summary** - Briefly describe what changed and why (not how)
 - **Include things to verify/checklist if applicable**:
 - **DO NOT include attribution footers** - No "Generated with Claude Code" or similar attribution text
+
+## UI Design Variants
+
+- **Always add a dropdown for multiple variants** - When asked to show multiple design variants, create a dropdown/select at the top of the component to switch between variants. Store the variant choice in local state or Zustand store as appropriate.

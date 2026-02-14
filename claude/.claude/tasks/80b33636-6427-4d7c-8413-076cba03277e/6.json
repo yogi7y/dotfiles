@@ -1,0 +1,9 @@
+{
+  "id": "6",
+  "subject": "Verify app runs end-to-end",
+  "description": "Phase 6: Verify login, CRUD operations, all screens render correctly, build succeeds",
+  "activeForm": "Verifying app builds and runs",
+  "status": "in_progress",
+  "blocks": [],
+  "blockedBy": []
+}

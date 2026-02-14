@@ -1,5 +1,6 @@
-ADD all modified and new files to git. If you think there are files that should not be in version control, ask the user. If you see files that you think should be bundled into separate commits, ask the user.
-THEN commit with a clear and concise one-line commit message, using semantic commit notation.
-THEN push the commit to origin.
-The user is EXPLICITLY asking you to perform these git tasks.
-Keep the commit message short and concise. Do not add written by claude code.
+- Add all the modified files to git. 
+- Commit the changes with proper message. 
+- Push the changes to remote. 
+- Check if a PR already exists for the branch, if not create a new PR using `gh pr create`.
+- Ensure the changes are added in PR description. If already added, skip it. If not, add the changes in PR description. 
+

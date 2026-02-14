@@ -1,0 +1,22 @@
+Launching lib/main_staging.dart on iPhone 16 Plus in debug mode...
+Xcode build done.                                            7.3s
+Connecting to VM Service at ws://127.0.0.1:61381/lVf69vrw8Ks=/ws
+Connected to the VM Service.
+[mainCommon] App starting with config: EnvConfig: supabaseUrl: https://nawtaxuivpuivxidoslm.supabase.co
+             supabaseAnonKey: [REDACTED]
+             googleClientId: [REDACTED]
+[LogCrashReporter] init
+[Analytics] init
+[PostHogAnalyticsService] PostHog initialized with host: https://us.i.posthog.com
+[Analytics] track: screen_viewed | {screen_name: /}
+[PostHogAnalyticsService] AnalyticsEvent{name: screen_viewed, screenName: /, properties: {screen_name: /}}
+[stow] ✅ Supabase initialized
+[stow]    URL: https://nawtaxuivpuivxidoslm.supabase.co
+flutter: supabase.supabase_flutter: INFO: ***** Supabase init completed *****
+[Analytics] track: screen_viewed | {screen_name: login_screen}
+[PostHogAnalyticsService] AnalyticsEvent{name: screen_viewed, screenName: login_screen, properties: {screen_name: login_screen}}
+[Analytics] track: button_clicked | {screen_name: login_screen, cta: sign_in_google}
+[PostHogAnalyticsService] AnalyticsEvent{name: button_clicked, screenName: login_screen, properties: {screen_name: login_screen, cta: sign_in_google}}
+Lost connection to device.
+
+Exited.

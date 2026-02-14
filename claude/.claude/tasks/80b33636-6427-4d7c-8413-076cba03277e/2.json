@@ -1,0 +1,9 @@
+{
+  "id": "2",
+  "subject": "Scaffold Next.js app with ShadCN",
+  "description": "Phase 2: Scaffold clients/expenses_web/ with package.json, next.config, tsconfig, ShadCN init, copy supabase clients, middleware, login page, create types, store, providers",
+  "activeForm": "Scaffolding Next.js app",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

@@ -1,0 +1,80 @@
+Restarted application in 1,487ms.
+I/FLTFireMsgService( 6990): FlutterFirebaseMessagingBackgroundService started!
+[log] Logger crash reporter initialized
+[log] Calling API:
+      IRequest(method: HttpMethod.get, path: /config/fetchConfig/, body: {}, queryParams: {key: REFERRAL_CONFIG}, headers: {}, formData: null)
+[log] Calling API:
+      IRequest(method: HttpMethod.get, path: users/fetchUserDetails, body: {}, queryParams: {}, headers: {}, formData: null)
+[log] Calling API:
+      IRequest(method: HttpMethod.post, path: /users/appData, body: {platform: ANDROID, firebaseAppInstanceId: 6ddd9f0ad85b7be3c03b5705ffb4ccee, appsFlyerInstanceId: 1769233060249-3336390145105391568, meta: {advertisingId: 0386ff29-6596-4690-a838-e9df63eb024b, appVersion: 2.0.14}}, queryParams: {}, headers: {}, formData: null)
+[log] Calling API:
+      IRequest(method: HttpMethod.post, path: /users/appData, body: {platform: ANDROID, firebaseAppInstanceId: 6ddd9f0ad85b7be3c03b5705ffb4ccee, appsFlyerInstanceId: 1769233060249-3336390145105391568, meta: {advertisingId: 0386ff29-6596-4690-a838-e9df63eb024b, appVersion: 2.0.14}}, queryParams: {}, headers: {}, formData: null)
+I/flutter ( 6990): ----------------FIREBASE CRASHLYTICS----------------
+I/flutter ( 6990): The following exception was thrown 400:
+I/flutter ( 6990): Exception: Server error occured as API throws 400 error
+I/flutter ( 6990): #0      FirebaseCrashlyticsReporter.recordCustomServerCrash (package:platinum_rx/src/services/crash_reporter/crash_reporter_service.dart:72:67)
+I/flutter ( 6990): <asynchronous suspension>
+I/flutter ( 6990): ----------------------------------------------------
+[WebEngageAnalyticsProvider] app_activate: {}
+[log] Logger: User ID set: 1077
+W/in.platinumrx( 6990): No such thread for suspend: 0x74216ce1d8:ExecutorService
+[DEEPLINK_PRX] AppLinksService.init() called
+[log] Error: Failure{message: Failed to acquire lock.Error: DioException [bad response]: This exception was thrown because the response has a status code of 400 and RequestOptions.validateStatus was configured to throw for this status code.
+      The status code of 400 has the following meaning: "Client error - the request contains bad syntax or cannot be fulfilled"
+      Read more about status codes at https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+      In order to resolve this exception you typically have either to verify and fix your request code or you have to fix the server code.
+
+      StackTrace: #0      DioMixin.request (package:dio/src/dio_mixin.dart:364:36)
+      #1      DioMixin.requestUri (package:dio/src/dio_mixin.dart:332:12)
+      #2      DioMixin.postUri (package:dio/src/dio_mixin.dart:128:12)
+      #3      DioApiClient._handlePostRequest (package:platinum_rx/src/core/networking/api_clients/dio_api_client.dart:174:36)
+      #4      DioApiClient.execute (package:platinum_rx/src/core/networking/api_clients/dio_api_client.dart:87:67)
+      #5      AnalyticsRepositoryImpl.appIdData (package:platinum_rx/src/services/analytics/data/repository/analytics_repository_impl.dart:37:41)
+      #6      AuthStateMixin.setAppId (package:platinum_rx/src/features/authentication/presentation/mixins/auth_state_mixin.dart:348:32)
+      <asynchronous suspension>
+      #7      Appsflyer.init (package:platinum_rx/src/services/analytics/analytics_events_provider.dart:109:5)
+      <asynchronous suspension>
+      #8      Appsflyer.logEvent (package:platinum_rx/src/services/analytics/analytics_events_provider.dart:121:23)
+      <asynchronous suspension>
+      #9      customAppEvent (package:platinum_rx/src/services/analytics/analytics_events_provider.dart:152:7)
+      <asynchronous suspension>
+      #10     _EntryScreenState._fireAppActivateEvent (package:platinum_rx/src/features/authentication/presentation/screens/entry_screen.dart:129:7)
+      <asynchronous suspension>
+[log] Calling API:
+      IRequest(method: HttpMethod.get, path: /wallet, body: {}, queryParams: {}, headers: {}, formData: null)
+[log] Calling API:
+      IRequest(method: HttpMethod.get, path: cohorts/fetchCohort/V1, body: {}, queryParams: {category: home}, headers: {}, formData: null)
+[log] Calling API:
+      IRequest(method: HttpMethod.get, path: /config/fetchConfig/, body: {}, queryParams: {key: APP_CONFIG}, headers: {}, formData: null)
+[log] Calling API:
+      IRequest(method: HttpMethod.get, path: orders/v3/fetchOrders, body: {}, queryParams: {limit: 10, skip: 0}, headers: {}, formData: null)
+[log] Calling API:
+      IRequest(method: HttpMethod.post, path: /pdp/advantageMedicine, body: {}, queryParams: {origin: recently_viewed}, headers: {}, formData: null)
+[log] Calling API:
+      IRequest(method: HttpMethod.post, path: /pdp/advantageMedicine, body: {}, queryParams: {origin: buy_again}, headers: {}, formData: null)
+[log] Calling API:
+      IRequest(method: HttpMethod.get, path: cart/v2/fetchActiveCart, body: {}, queryParams: {fetchDigitisationStatus: 1}, headers: {}, formData: null)
+W/in.platinumrx( 6990): Suspending all threads took: 162.809ms
+W/WindowOnBackDispatcher( 6990): OnBackInvokedCallback is not enabled for the application.
+W/WindowOnBackDispatcher( 6990): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+I/in.platinumrx( 6990): Background young concurrent mark compact GC freed 9677KB AllocSpace bytes, 26(1276KB) LOS objects, 41% free, 13MB/23MB, paused 163.544ms,1.122ms total 845.720ms
+W/FLTFireMsgService( 6990): Attempted to start a duplicate background isolate. Returning...
+[DEEPLINK_PRX] onAppInitialized() called, pendingDeepLink: null
+[DEEPLINK_PRX] No pending deeplink to process after app init
+[DEEPLINK_PRX] DashboardScreen._authStateChanges: isUserLoggedIn=false, mounted=true
+[DEEPLINK_PRX] DashboardScreen._authStateChanges: user logged out, resetting state
+[log] Calling API:
+      IRequest(method: HttpMethod.get, path: /config/fetchConfig/, body: {}, queryParams: {key: APP_CONFIG}, headers: {}, formData: null)
+[log] Calling API:
+      IRequest(method: HttpMethod.get, path: orders/v3/fetchOrders, body: {}, queryParams: {limit: 10, skip: 0}, headers: {}, formData: null)
+[log] Calling API:
+      IRequest(method: HttpMethod.get, path: cohorts/fetchCohort/V1, body: {}, queryParams: {category: home}, headers: {}, formData: null)
+[log] Calling API:
+      IRequest(method: HttpMethod.get, path: cart/v2/fetchActiveCart, body: {}, queryParams: {fetchDigitisationStatus: 1}, headers: {}, formData: null)
+[log] Calling API:
+      IRequest(method: HttpMethod.post, path: /pdp/advantageMedicine, body: {}, queryParams: {origin: cart}, headers: {}, formData: null)
+[log] Calling API:
+      IRequest(method: HttpMethod.post, path: /pdp/advantageMedicine, body: {}, queryParams: {origin: under_99}, headers: {}, formData: null)
+W/in.platinumrx( 6990): Suspending all threads took: 18.886ms
+I/in.platinumrx( 6990): Background concurrent mark compact GC freed 8996KB AllocSpace bytes, 8(764KB) LOS objects, 49% free, 12MB/24MB, paused 19.846ms,62.137ms total 1.345s
+W/System  ( 6990): A resource failed to call close.

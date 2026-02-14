@@ -1,0 +1,160 @@
+Synthetic package output (package:flutter_gen) is deprecated: https://flutter.dev/to/flutter-gen-deprecation. In a future release, synthetic-package will default to `false` and will later be removed entirely.
+Launching lib/main_staging.dart on iPhone 16 Plus in debug mode...
+Xcode build done.                                            9.4s
+Failed to build iOS app
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/AppsFlyerLib_Privacy.bundle'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/firebase_messaging_Privacy.bundle'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/permission_handler_apple_privacy.bundle'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/DKImagePickerController.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/DKPhotoGallery.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/FirebaseABTesting.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/FirebaseCore.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/FirebaseCoreExtension.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/FirebaseCoreInternal.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/FirebaseCrashlytics.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/FirebaseInAppMessaging.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/FirebaseInstallations.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/FirebaseMessaging.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/FirebasePerformance.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/FirebaseRemoteConfig.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/FirebaseRemoteConfigInterop.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/FirebaseSessions.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/FirebaseSharedSwift.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/GoogleDataTransport.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/GoogleUtilities.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/OtplessSDK.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/FBLPromises.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/Promises.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/SDWebImage.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/Sentry.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/SwiftyGif.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/advertising_id.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/app_links.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/app_tracking_transparency.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/camera_avfoundation.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/device_info_plus.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/file_picker.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/flutter_cashfree_pg_sdk.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/flutter_contacts.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/flutter_keyboard_visibility.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/flutter_local_notifications.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/flutter_native_splash.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/flutter_secure_storage.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/fluttertoast.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/geocoding_ios.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/geolocator_apple.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/image_picker_ios.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/in_app_review.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/integration_test.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/location.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/nanopb.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/otpless_flutter.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/package_info_plus.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/path_provider_foundation.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/phonepe_payment_sdk.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/razorpay_flutter.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/sentry_flutter.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/share_plus.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/shared_preferences_foundation.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/sim_number_picker.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/sms_autofill.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/sqflite_darwin.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/url_launcher_ios.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/video_player_avfoundation.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/webengage_flutter.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/webview_flutter_wkwebview.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/WEServiceExtension.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/CFNetworkSDK.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/CashfreeAnalyticsSDK.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/CashfreePG.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/CashfreePGCoreSDK.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/CashfreePGUISDK.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/FBAEMKit.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/FBSDKCoreKit.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/FBSDKCoreKit_Basics.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/PhonePePayment.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/WebEngage.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/WELocation.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/Razorpay.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/RazorpayCore.framework'
+
+Error (Xcode): Multiple commands produce '/Users/yogi/Development/professional/platinumrx/prx-2765/build/ios/Debug-staging-iphonesimulator/Runner.app/Frameworks/RazorpayStandard.framework'
+
+Could not build the application for the simulator.
+Error launching application on iPhone 16 Plus.
+
+Exited (1).

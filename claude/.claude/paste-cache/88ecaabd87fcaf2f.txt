@@ -1,0 +1,27 @@
+## Error Type
+Console Error
+
+## Error Message
+`DialogContent` requires a `DialogTitle` for the component to be accessible for screen reader users.
+
+If you want to hide the `DialogTitle`, you can wrap it with our VisuallyHidden component.
+
+For more information, see https://radix-ui.com/primitives/docs/components/dialog
+
+
+    at DialogContent (file:///Users/yogi/Development/yogi-hq-expenses/clients/expenses_web/.next/dev/static/chunks/src_8be60ef9._.js:4422:215)
+    at DialogPortal (file:///Users/yogi/Development/yogi-hq-expenses/clients/expenses_web/.next/dev/static/chunks/src_8be60ef9._.js:4380:214)
+    at DialogContent (file:///Users/yogi/Development/yogi-hq-expenses/clients/expenses_web/.next/dev/static/chunks/src_8be60ef9._.js:4414:214)
+    at ExpenseForm (file:///Users/yogi/Development/yogi-hq-expenses/clients/expenses_web/.next/dev/static/chunks/src_8be60ef9._.js:8624:221)
+    at DashboardLayout (file:///Users/yogi/Development/yogi-hq-expenses/clients/expenses_web/.next/dev/static/chunks/src_8be60ef9._.js:9239:215)
+    at Home (src/app/page.tsx:4:10)
+
+## Code Frame
+  2 |
+  3 | export default function Home() {
+> 4 |   return <DashboardLayout />;
+    |          ^
+  5 | }
+  6 |
+
+Next.js version: 16.1.6 (Turbopack)

@@ -1,0 +1,9 @@
+{
+  "id": "2",
+  "subject": "Create Supabase API layer",
+  "description": "Create src/lib/api/tasks.ts and src/lib/api/projects.ts with CRUD functions",
+  "activeForm": "Creating API layer",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

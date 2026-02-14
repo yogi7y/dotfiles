@@ -1,0 +1,22 @@
+I/flutter (26525): === Google Sign-In Debug ===
+I/flutter (26525): Scopes: [https://www.googleapis.com/auth/calendar.events]
+I/flutter (26525): ServerClientId: 524674459663-a3eqfer6vej8i9537ntrvrhcqajacqpf.apps.googleusercontent.com
+I/flutter (26525): Account: GoogleSignInAccount:{displayName: Yogesh Parwani, email: yogesh.parwani.7y@gmail.com, id: 115388833037703854835, photoUrl: https://lh3.googleusercontent.com/a/ACg8ocIQQLAOkiAywUHyKYKToko2Y2rmk0pWk2AVoACe6M0Pxo-zuQ=s96-c, serverAuthCode: 4/0ASc3gC3RFI-WabE4Yt0gDNxlmljoEDH1r04WgfTosuP_6RuKeHjqYn9XXLCrlvFgNH5_7w}
+I/flutter (26525): Email: yogesh.parwani.7y@gmail.com
+I/flutter (26525): ServerAuthCode: 4/0ASc3gC3RFI-WabE4Yt0gDNxlmljoEDH1r04WgfTosuP_6RuKeHjqYn9XXLCrlvFgNH5_7w
+I/flutter (26525): NetworkCheck: _onAppResumed - global isConnected: true
+I/flutter (26525): NetworkCheck: _onAppResumed - service.isConnected: true
+I/flutter (26525): Google Calendar connection error: PlatformException(exception, Calling this from your main thread can lead to deadlock, null, null)
+I/flutter (26525): #0      GoogleSignInApi.getAccessToken (package:google_sign_in_android/src/messages.g.dart:285)
+I/flutter (26525): <asynchronous suspension>
+I/flutter (26525): #1      GoogleSignInAndroid.getTokens.<anonymous closure> (package:google_sign_in_android/google_sign_in_android.dart:71)
+I/flutter (26525): <asynchronous suspension>
+I/flutter (26525): #2      GoogleSignInAccount.authentication (package:google_sign_in/google_sign_in.dart:95)
+I/flutter (26525): <asynchronous suspension>
+I/flutter (26525): #3      GoogleCalendarService._getTokens (package:support_mate/modules/calendar_sync/data/google_calendar_service.dart:116)
+I/flutter (26525): <asynchronous suspension>
+I/flutter (26525): #4      CalendarSyncNotifier.connectGoogle (package:support_mate/modules/calendar_sync/presentation/providers/calendar_sync_provider.dart:88)
+I/flutter (26525): <asynchronous suspension>
+I/flutter (26525):
+I/flutter (26525): NetworkCheck: _onAppResumed - global isConnected: true
+I/flutter (26525): NetworkCheck: _onAppResumed - service.isConnected: true

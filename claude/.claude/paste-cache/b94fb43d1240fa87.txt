@@ -1,0 +1,22 @@
+Launching lib/main_staging.dart on iPhone 16 Plus in debug mode...
+Xcode build done.                                           39.3s
+Connecting to VM Service at ws://127.0.0.1:53682/OYQvsbxcL2c=/ws
+Connected to the VM Service.
+[mainCommon] App starting with config: EnvConfig: supabaseUrl: https://nawtaxuivpuivxidoslm.supabase.co
+             supabaseAnonKey: [REDACTED]
+             googleClientId: [REDACTED]
+[LogCrashReporter] init
+[Analytics] init
+[PostHogAnalyticsService] PostHog initialized with host: https://us.i.posthog.com
+[Analytics] track: screen_viewed | {screen_name: /}
+[PostHogAnalyticsService] AnalyticsEvent{name: screen_viewed, screenName: /, properties: {screen_name: /}}
+flutter: supabase.supabase_flutter: INFO: ***** Supabase init completed *****
+[stow] ✅ Supabase initialized
+[stow]    URL: https://nawtaxuivpuivxidoslm.supabase.co
+[Analytics] track: screen_viewed | {screen_name: login_screen}
+[PostHogAnalyticsService] AnalyticsEvent{name: screen_viewed, screenName: login_screen, properties: {screen_name: login_screen}}
+[Analytics] track: button_clicked | {screen_name: login_screen, cta: sign_in_google}
+[PostHogAnalyticsService] AnalyticsEvent{name: button_clicked, screenName: login_screen, properties: {screen_name: login_screen, cta: sign_in_google}}
+[stow] ✅ Google Sign In successful
+[stow]    Email: yogeshparwani99.yp@gmail.com
+[StowSnackbar] AuthRetryableFetchException(message: ClientException with SocketException: Failed host lookup: 'nawtaxuivpuivxidoslm.supabase.co' (OS Error: nodename nor servname provided, or not known, errno = 8), uri=https://nawtaxuivpuivxidoslm.supabase.co/auth/v1/token?grant_type=id_token, statusCode: null)

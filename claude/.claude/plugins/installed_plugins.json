@@ -1,4 +1,16 @@
 {
-  "version": 1,
-  "plugins": {}
+  "version": 2,
+  "plugins": {
+    "code-review@claude-plugins-official": [
+      {
+        "scope": "local",
+        "installPath": "/Users/yogi/.claude/plugins/cache/claude-plugins-official/code-review/2cd88e7947b7",
+        "version": "2cd88e7947b7",
+        "installedAt": "2026-02-07T18:30:59.663Z",
+        "lastUpdated": "2026-02-07T18:30:59.663Z",
+        "gitCommitSha": "2cd88e7947b7382e045666abee790c7f55f669f3",
+        "projectPath": "/Users/yogi/Development/professional/platinumrx/interviews"
+      }
+    ]
+  }
 }
