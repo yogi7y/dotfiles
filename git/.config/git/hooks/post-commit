@@ -1,7 +1,0 @@
-#!/bin/bash
-
-if ! pgrep -q "Raycast"; then
-    exit 0
-fi
-
-open -g 'raycast://confetti'
