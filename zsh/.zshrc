@@ -102,3 +102,7 @@ atuin-setup() {
 }
 
 atuin-setup
+
+
+# ---------- rbenv ----------
+eval "$(rbenv init - zsh)"
