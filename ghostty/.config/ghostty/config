@@ -2,5 +2,3 @@ font-family = JetBrainsMono Nerd Font Mono
 font-size = 14
 
 theme = Catppuccin Mocha
-
-keybind = cmd+k=text:\x0c
