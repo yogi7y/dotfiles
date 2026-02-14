@@ -39,6 +39,8 @@ alias lt="eza --tree --level=2 --icons"
 
 alias cat="bat"
 
+alias code="cursor"
+
 
 # ---------- Starship ----------
 eval "$(starship init zsh)"
