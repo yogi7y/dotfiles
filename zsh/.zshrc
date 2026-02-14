@@ -48,3 +48,57 @@ eval "$(starship init zsh)"
 # ---------- BAT ----------
 export BAT_THEME="Catppuccin Mocha"
 
+
+# ---------- FZF ----------
+eval "$(fzf --zsh)"
+
+# ---------- Atuin + FZF History ----------
+atuin-setup() {
+    if ! command -v atuin &> /dev/null; then
+        echo "atuin not found. Please install it first."
+        return 1
+    fi
+
+    bindkey '^E' _atuin_search_widget
+
+    export ATUIN_NOBIND="true"
+    eval "$(atuin init zsh)"
+
+    fzf-atuin-history-widget() {
+        local selected
+        setopt localoptions noglobsubst noposixbuiltins pipefail no_aliases 2>/dev/null
+
+        local atuin_opts="--cmd-only"
+        local fzf_opts=(
+            --height=40%
+            --layout=reverse
+            --tac
+            "-n2..,.."
+            --tiebreak=index
+            "--query=${LBUFFER}"
+            "+m"
+            "--bind=ctrl-d:reload(atuin search $atuin_opts -c $PWD),ctrl-r:reload(atuin search $atuin_opts)"
+        )
+
+        selected=$(
+            eval "atuin search ${atuin_opts}" |
+                fzf "${fzf_opts[@]}"
+        )
+
+        if [ -n "$selected" ]; then
+            LBUFFER+="${selected}"
+        fi
+
+        zle reset-prompt
+        return $?
+    }
+
+    zle -N fzf-atuin-history-widget
+    bindkey '^R' fzf-atuin-history-widget
+
+    # Bind fzf-atuin-history-widget to Ctrl+R in both vi insert and normal modes
+    bindkey -M viins '^R' fzf-atuin-history-widget  # Insert mode
+    bindkey -M vicmd '^R' fzf-atuin-history-widget  # Normal mode
+}
+
+atuin-setup

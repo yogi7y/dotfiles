@@ -1,0 +1,16 @@
+inline_height = 20
+style = "compact"
+invert = true
+
+enter_accept = false
+
+[stats]
+
+[keys]
+
+[sync]
+records = true
+
+[preview]
+
+[daemon]
