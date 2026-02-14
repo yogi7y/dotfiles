@@ -1,0 +1,31 @@
+# ---------- General ----------
+[character]
+success_symbol = "[❯](blue)"
+error_symbol = "[✗](yellow)"  # different symbol AND different color
+
+[directory]
+truncation_length = 3  # show last 3 folders
+truncate_to_repo = true  # truncate to git repo root
+
+[cmd_duration]
+min_time = 0  # always show duration
+
+# ---------- Git ----------
+[git_branch]
+symbol = " "
+
+[git_status]
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+untracked = "?${count}"
+modified = "!${count}"
+staged = "+${count}"
+
+# ---------- Languages ----------
+[dart]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
