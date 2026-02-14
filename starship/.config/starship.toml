@@ -1,4 +1,7 @@
 # ---------- General ----------
+format = """$directory$git_branch$git_status$dart$nodejs$line_break$character"""
+right_format = """$cmd_duration"""
+
 [character]
 success_symbol = "[❯](blue)"
 error_symbol = "[✗](yellow)"  # different symbol AND different color
