@@ -17,6 +17,8 @@
       "Bash(env)",
       "Bash(printenv *)",
       "Bash(git *)",
+      "Bash(fvm flutter *)",
+      "Bash(fvm dart *)",
       "Bash(stow *)",
       "Bash(brew list *)",
       "Bash(brew info *)",
