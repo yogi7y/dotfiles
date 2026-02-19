@@ -9,6 +9,7 @@ source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 
 # ---------- PATH ----------
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
 
 
 # ---------- Plugins ----------
@@ -39,7 +40,6 @@ alias lt="eza --tree --level=2 --icons"
 
 alias cat="bat"
 
-alias code="cursor"
 
 
 # ---------- Starship ----------
