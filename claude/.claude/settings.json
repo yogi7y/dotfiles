@@ -22,6 +22,7 @@
       "Bash(stow *)",
       "Bash(brew list *)",
       "Bash(brew info *)",
+      "Bash(gh *)",
       "WebSearch",
       "WebFetch"
     ],
