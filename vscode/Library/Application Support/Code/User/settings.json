@@ -147,6 +147,10 @@
       "before": ["<leader>", "g", "i"],
       "commands": ["editor.action.goToImplementation"],
     },
+    {
+      "before": ["<leader>", "c", "r"],
+      "commands": ["editor.action.rename"],
+    },
   ],
   "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
