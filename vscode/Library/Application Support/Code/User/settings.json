@@ -178,4 +178,5 @@
   "git.blame.editorDecoration.enabled": true,
   "workbench.editor.enablePreview": false,
   "workbench.activityBar.location": "hidden",
+  "editor.accessibilitySupport": "off",
 }

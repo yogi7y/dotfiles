@@ -24,7 +24,9 @@
       "Bash(brew info *)",
       "Bash(gh *)",
       "WebSearch",
-      "WebFetch"
+      "WebFetch",
+      "mcp__paper__*",
+      "mcp__pencil"
     ],
     "deny": [
       "Bash(rm -rf /)",
