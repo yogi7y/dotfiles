@@ -44,6 +44,8 @@ alias lt="eza --tree --level=2 --icons"
 
 alias cat="bat"
 
+alias gs="git status"
+
 
 
 # ---------- Starship ----------
