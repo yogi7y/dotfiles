@@ -110,5 +110,8 @@ atuin-setup() {
 atuin-setup
 
 
+# ---------- Zoxide ----------
+eval "$(zoxide init zsh --cmd cd)"
+
 # ---------- rbenv ----------
 eval "$(rbenv init - zsh)"
