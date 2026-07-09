@@ -110,8 +110,9 @@ atuin-setup() {
 atuin-setup
 
 
-# ---------- Zoxide ----------
-eval "$(zoxide init zsh --cmd cd)"
-
 # ---------- rbenv ----------
 eval "$(rbenv init - zsh)"
+
+# ---------- Zoxide ----------
+# Must be last — zoxide hooks into cd and breaks if anything reinitializes shell functions after it
+eval "$(zoxide init zsh --cmd cd)"
