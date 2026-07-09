@@ -3,9 +3,8 @@
 
 config-version = 2
 
-# Launch JankyBorders to outline the focused window, and default apps
+# Launch default apps
 after-startup-command = [
-    'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0x00000000 width=5.0',
     'exec-and-forget open -a Tasks',
 ]
 
