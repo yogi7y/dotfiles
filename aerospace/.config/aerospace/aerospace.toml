@@ -3,9 +3,10 @@
 
 config-version = 2
 
-# Launch JankyBorders to outline the focused window
+# Launch JankyBorders to outline the focused window, and default apps
 after-startup-command = [
     'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0x00000000 width=5.0',
+    'exec-and-forget open -a Tasks',
 ]
 
 start-at-login = true
@@ -27,7 +28,7 @@ focus-follows-mouse.enabled = true
 
 key-mapping.preset = 'qwerty'
 
-# Workspaces: 1 = terminal, 2 = code, 3 = browser, 4-5 = spare
+# Workspaces: 1 = terminal, 2 = code, 3 = browser, 4 = tasks, 5 = spare, 9 = chrome
 persistent-workspaces = ["1", "2", "3", "4", "5"]
 
 gaps.inner.horizontal = 8
@@ -54,6 +55,10 @@ run = 'move-node-to-workspace 3'
 [[on-window-detected]]
 if.app-id = 'com.google.Chrome'
 run = 'move-node-to-workspace 9'
+
+[[on-window-detected]]
+if.app-id = 'com.yogihq.tasks'
+run = 'move-node-to-workspace 4'
 
 # Apps that work better floating
 [[on-window-detected]]
