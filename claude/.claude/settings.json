@@ -22,10 +22,14 @@
       "Bash(stow *)",
       "Bash(brew list *)",
       "Bash(brew info *)",
+      "Bash(find *)",
+      "Bash(grep *)",
       "Bash(gh *)",
+      "Read",
       "WebSearch",
       "WebFetch",
       "mcp__paper__*",
+      "mcp__canvas__*",
       "mcp__pencil"
     ],
     "deny": [
@@ -33,5 +37,36 @@
       "Bash(rm -rf ~)",
       "Bash(git push --force *)"
     ]
-  }
+  },
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay /System/Library/Sounds/Funk.aiff"
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "bash ~/.claude/statusline-command.sh"
+  },
+  "enabledPlugins": {
+    "swift-lsp@claude-plugins-official": true,
+    "caveman@caveman": true
+  },
+  "extraKnownMarketplaces": {
+    "caveman": {
+      "source": {
+        "source": "github",
+        "repo": "JuliusBrussee/caveman"
+      }
+    }
+  },
+  "effortLevel": "medium",
+  "theme": "dark-daltonized",
+  "skipWorkflowUsageWarning": true
 }
