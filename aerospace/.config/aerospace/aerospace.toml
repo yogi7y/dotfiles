@@ -51,6 +51,10 @@ run = 'move-node-to-workspace 2'
 if.app-id = 'company.thebrowser.Browser' # Arc
 run = 'move-node-to-workspace 3'
 
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome'
+run = 'move-node-to-workspace 9'
+
 # Apps that work better floating
 [[on-window-detected]]
 if.app-id = 'com.apple.finder'
@@ -88,6 +92,7 @@ run = 'layout floating'
     alt-3 = 'workspace 3'
     alt-4 = 'workspace 4'
     alt-5 = 'workspace 5'
+    alt-9 = 'workspace 9' # Chrome
 
     # Move window to workspace (and follow it)
     alt-shift-1 = 'move-node-to-workspace 1 --focus-follows-window'
@@ -95,6 +100,7 @@ run = 'layout floating'
     alt-shift-3 = 'move-node-to-workspace 3 --focus-follows-window'
     alt-shift-4 = 'move-node-to-workspace 4 --focus-follows-window'
     alt-shift-5 = 'move-node-to-workspace 5 --focus-follows-window'
+    alt-shift-9 = 'move-node-to-workspace 9 --focus-follows-window'
 
     # Toggle between the two most recent workspaces
     alt-tab = 'workspace-back-and-forth'
