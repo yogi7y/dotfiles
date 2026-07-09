@@ -30,39 +30,48 @@ key-mapping.preset = 'qwerty'
 # Workspaces: 1 = terminal, 2 = code, 3 = browser, 4 = tasks, 5 = spare, 9 = chrome
 persistent-workspaces = ["1", "2", "3", "4", "5"]
 
-gaps.inner.horizontal = 8
-gaps.inner.vertical =   8
-gaps.outer.left =       8
-gaps.outer.bottom =     8
-gaps.outer.top =        8
-gaps.outer.right =      8
+gaps.inner.horizontal = 0
+gaps.inner.vertical =   0
+gaps.outer.left =       0
+gaps.outer.bottom =     0
+gaps.outer.top =        0
+gaps.outer.right =      0
 
 # ---------- App auto-assignment ----------
 
 [[on-window-detected]]
 if.app-id = 'com.mitchellh.ghostty'
-run = 'move-node-to-workspace 1'
+run = ['move-node-to-workspace 1', 'fullscreen']
 
 [[on-window-detected]]
 if.app-id = 'com.microsoft.VSCode'
-run = 'move-node-to-workspace 2'
+run = ['move-node-to-workspace 2', 'fullscreen']
 
 [[on-window-detected]]
 if.app-id = 'company.thebrowser.Browser' # Arc
-run = 'move-node-to-workspace 3'
+run = ['move-node-to-workspace 3', 'fullscreen']
 
 [[on-window-detected]]
 if.app-id = 'com.google.Chrome'
-run = 'move-node-to-workspace 9'
+run = ['move-node-to-workspace 9', 'fullscreen']
 
 [[on-window-detected]]
 if.app-id = 'com.yogihq.tasks'
-run = 'move-node-to-workspace 4'
+run = ['move-node-to-workspace 4', 'fullscreen']
+
+[[on-window-detected]]
+if.app-id = 'com.anthropic.claudefordesktop'
+run = ['move-node-to-workspace 5', 'fullscreen']
 
 # Apps that work better floating
 [[on-window-detected]]
 if.app-id = 'com.apple.finder'
 run = 'layout floating'
+
+# Catch-all: every other app opens fullscreen (must stay last — first matching rule wins)
+[[on-window-detected]]
+if = 'true'
+run = 'fullscreen'
 
 # ---------- Keybindings ----------
 
