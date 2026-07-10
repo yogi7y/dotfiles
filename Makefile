@@ -14,6 +14,7 @@ install: ## Full setup: Homebrew + packages + stow + plugins + extensions
 	@./bootstrap.sh
 
 brew: ## Install/update Homebrew packages from the Brewfile
+	@grep -E '^tap "' Brewfile | sed -E 's/^tap "([^"]+)".*/\1/' | while read -r t; do brew trust "$$t" >/dev/null 2>&1 || true; done
 	@brew bundle --file=Brewfile
 
 stow: ## Symlink all config packages into $$HOME

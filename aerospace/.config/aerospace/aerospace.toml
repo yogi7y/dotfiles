@@ -101,6 +101,10 @@ run = 'layout floating'
 if.app-id = 'com.apple.ActivityMonitor'
 run = 'layout floating'
 
+[[on-window-detected]]
+if.app-id = 'com.westbridge.stremio5-mac' # Stremio
+run = 'layout floating'
+
 # Catch-all: every other app opens fullscreen (must stay last — first matching rule wins)
 [[on-window-detected]]
 if = 'true'
