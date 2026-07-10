@@ -11,7 +11,8 @@ DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$DOTFILES_DIR"
 
 # Stow packages to link into $HOME (top-level dirs that mirror the home layout).
-STOW_PACKAGES=(aerospace atuin claude cursor ghostty git karabiner starship tmux vscode zsh)
+# aerospace is excluded — its config is per-machine (see step 8).
+STOW_PACKAGES=(atuin claude cursor ghostty git karabiner starship tmux vscode zsh)
 
 info() { printf '\033[1;34m==>\033[0m %s\n' "$1"; }
 skip() { printf '\033[1;33m--\033[0m  %s\n' "$1"; }
@@ -78,6 +79,14 @@ fi
 # ---------- 7. Reload aerospace if running ----------
 if command -v aerospace >/dev/null 2>&1 && aerospace list-windows >/dev/null 2>&1; then
   aerospace reload-config && ok "aerospace config reloaded"
+fi
+
+# ---------- 8. AeroSpace per-machine config ----------
+# Config is per-machine; pick one if it hasn't been selected yet.
+if [ ! -e "$HOME/.config/aerospace/aerospace.toml" ]; then
+  skip "AeroSpace config not selected — run: make aerospace-personal   OR   make aerospace-work"
+else
+  ok "AeroSpace config already selected"
 fi
 
 info "Done. Note: shell plugins (zinit) install on first new shell; language runtimes (rbenv/fvm versions) are installed per-project."

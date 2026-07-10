@@ -1,10 +1,15 @@
 # Dotfiles — run `make` or `make help` to see targets.
 
-STOW_PACKAGES := aerospace atuin claude cursor ghostty git karabiner starship tmux vscode zsh
+# aerospace is intentionally excluded — its config is per-machine, selected with
+# `make aerospace-personal` / `make aerospace-work` (see below), not stowed.
+STOW_PACKAGES := atuin claude cursor ghostty git karabiner starship tmux vscode zsh
+
+AEROSPACE_DIR := $(HOME)/.config/aerospace
+AEROSPACE_OUT := $(AEROSPACE_DIR)/aerospace.toml
 
 .DEFAULT_GOAL := help
 
-.PHONY: help install brew stow unstow extensions update
+.PHONY: help install brew stow unstow extensions update aerospace-personal aerospace-work
 
 help: ## Show this help
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) \
@@ -31,3 +36,17 @@ extensions: ## Install VS Code / Cursor extensions from editor/extensions.txt
 
 update: brew ## Refresh: update brew packages then re-stow
 	@$(MAKE) stow
+
+aerospace-personal: ## Use the personal AeroSpace config on this machine
+	@[ -L "$(AEROSPACE_DIR)" ] && rm -f "$(AEROSPACE_DIR)" || true  # clear stale stow-folded symlink
+	@mkdir -p "$(AEROSPACE_DIR)"
+	@ln -sfn $(CURDIR)/aerospace/config/personal.toml $(AEROSPACE_OUT)
+	@command -v aerospace >/dev/null 2>&1 && aerospace reload-config || true
+	@echo "aerospace: using personal config"
+
+aerospace-work: ## Use the work AeroSpace config on this machine
+	@[ -L "$(AEROSPACE_DIR)" ] && rm -f "$(AEROSPACE_DIR)" || true  # clear stale stow-folded symlink
+	@mkdir -p "$(AEROSPACE_DIR)"
+	@ln -sfn $(CURDIR)/aerospace/config/work.toml $(AEROSPACE_OUT)
+	@command -v aerospace >/dev/null 2>&1 && aerospace reload-config || true
+	@echo "aerospace: using work config"

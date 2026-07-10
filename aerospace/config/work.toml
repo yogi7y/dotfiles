@@ -1,5 +1,7 @@
-# AeroSpace configuration
+# AeroSpace configuration — WORK machine
 # Docs: https://nikitabobko.github.io/AeroSpace/guide
+# This is a full, standalone config. Tailor work-specific app rules here.
+# Shared changes (keybindings, gaps) must also be mirrored into personal.toml.
 
 config-version = 2
 
@@ -24,7 +26,7 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
 key-mapping.preset = 'qwerty'
 
-# Workspaces: 1 = terminal, 2 = code, 3 = browser, 4 = tasks, 5 = spare, 8 = docker, 9 = chrome
+# Workspaces: 1 = terminal, 2 = chrome, 3 = browser, 4 = tasks, 5 = spare, 8 = docker
 persistent-workspaces = ["1", "2", "3", "4", "5", "8"]
 
 gaps.inner.horizontal = 0
@@ -48,9 +50,10 @@ run = ['move-node-to-workspace 2', 'fullscreen']
 if.app-id = 'company.thebrowser.Browser' # Arc
 run = ['move-node-to-workspace 3', 'fullscreen']
 
+# Work: Chrome opens on workspace 2 (differs from personal, where it's 9)
 [[on-window-detected]]
 if.app-id = 'com.google.Chrome'
-run = ['move-node-to-workspace 9', 'fullscreen']
+run = ['move-node-to-workspace 2', 'fullscreen']
 
 [[on-window-detected]]
 if.app-id = 'com.yogihq.tasks'
@@ -101,10 +104,6 @@ run = 'layout floating'
 if.app-id = 'com.apple.ActivityMonitor'
 run = 'layout floating'
 
-[[on-window-detected]]
-if.app-id = 'com.westbridge.stremio5-mac' # Stremio
-run = 'layout floating'
-
 # Catch-all: every other app opens fullscreen (must stay last — first matching rule wins)
 [[on-window-detected]]
 if = 'true'
@@ -138,12 +137,11 @@ run = 'fullscreen'
 
     # Switch workspace
     alt-1 = 'workspace 1'
-    alt-2 = 'workspace 2'
+    alt-2 = 'workspace 2' # Chrome
     alt-3 = 'workspace 3'
     alt-4 = 'workspace 4'
     alt-5 = 'workspace 5'
     alt-8 = 'workspace 8' # Docker
-    alt-9 = 'workspace 9' # Chrome
 
     # Move window to workspace (and follow it)
     alt-shift-1 = 'move-node-to-workspace 1 --focus-follows-window'
@@ -152,7 +150,6 @@ run = 'fullscreen'
     alt-shift-4 = 'move-node-to-workspace 4 --focus-follows-window'
     alt-shift-5 = 'move-node-to-workspace 5 --focus-follows-window'
     alt-shift-8 = 'move-node-to-workspace 8 --focus-follows-window'
-    alt-shift-9 = 'move-node-to-workspace 9 --focus-follows-window'
 
     # Toggle between the two most recent workspaces
     alt-tab = 'workspace-back-and-forth'

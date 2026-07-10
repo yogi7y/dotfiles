@@ -30,5 +30,10 @@ package, installs tmux + editor plugins. Every step is idempotent (safe to re-ru
 - **VS Code + Cursor share one config.** The canonical `settings.json`/`keybindings.json`
   live in the `vscode` package; the `cursor` package's copies are symlinks to them. Edit the
   `vscode` files; both editors update. Editor-specific keys are harmlessly ignored by the other.
+- **AeroSpace is per-machine and NOT stowed.** Full configs live in `aerospace/config/`
+  (`personal.toml`, `work.toml`). Select one per machine with `make aerospace-personal` or
+  `make aerospace-work` — it symlinks `~/.config/aerospace/aerospace.toml` to that file (so
+  edits are still live, and AeroSpace auto-reloads). Machine-specific rules (e.g. Chrome →
+  different workspace) go in the respective file; shared changes must be mirrored into both.
 - Add a Homebrew tool by adding a line to `Brewfile`; add an editor extension via
   `editor/extensions.txt`.
