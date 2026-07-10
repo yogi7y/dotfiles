@@ -184,4 +184,8 @@
   "editor.accessibilitySupport": "off",
   "editor.unicodeHighlight.invisibleCharacters": false,
   "githubPullRequests.pullBranch": "never",
+  // Cursor-specific keys below are ignored by VS Code (and vice-versa) — safe to share one file.
+  "cursor.general.disableHttp2": true,
+  "git.blame.statusBarItem.enabled": true,
+  "githubPullRequests.fileListLayout": "tree",
 }
