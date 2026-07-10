@@ -29,13 +29,6 @@ else
 fi
 
 # ---------- 2. Brew packages ----------
-# Newer Homebrew (with HOMEBREW_REQUIRE_TAP_TRUST, common on managed machines) refuses to
-# load third-party taps until trusted. Trust every tap declared in the Brewfile.
-info "Trusting third-party taps…"
-grep -E '^tap "' "$DOTFILES_DIR/Brewfile" | sed -E 's/^tap "([^"]+)".*/\1/' | while read -r tap; do
-  brew trust "$tap" >/dev/null 2>&1 || true
-done
-
 info "Installing packages from Brewfile (skips what's already present)…"
 brew bundle --file="$DOTFILES_DIR/Brewfile"
 ok "Brewfile applied"
