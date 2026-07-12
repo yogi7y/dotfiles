@@ -63,8 +63,24 @@ if.app-id = 'com.anthropic.claudefordesktop'
 run = ['move-node-to-workspace 5', 'fullscreen']
 
 [[on-window-detected]]
-if.app-id = 'com.docker.docker'
+if.app-id = 'app.yaak.desktop' # Yaak
+run = ['move-node-to-workspace 6', 'fullscreen']
+
+[[on-window-detected]]
+if.app-id = 'notion.id' # Notion
+run = ['move-node-to-workspace 7', 'fullscreen']
+
+[[on-window-detected]]
+if.app-id = 'md.obsidian' # Obsidian
+run = ['move-node-to-workspace 7', 'fullscreen']
+
+[[on-window-detected]]
+if.app-id = 'net.whatsapp.WhatsApp' # WhatsApp
 run = ['move-node-to-workspace 8', 'fullscreen']
+
+[[on-window-detected]]
+if.app-id = 'com.docker.docker'
+run = ['move-node-to-workspace 10', 'fullscreen']
 
 # Apps that work better floating
 [[on-window-detected]]
@@ -107,6 +123,10 @@ run = 'layout floating'
 if.app-id = 'com.westbridge.stremio5-mac' # Stremio
 run = 'layout floating'
 
+[[on-window-detected]]
+if.app-id = 'org.localsend.localsendApp' # LocalSend
+run = 'layout floating'
+
 # Catch-all: every other app opens fullscreen (must stay last — first matching rule wins)
 [[on-window-detected]]
 if = 'true'
@@ -144,8 +164,11 @@ run = 'fullscreen'
     alt-3 = 'workspace 3'
     alt-4 = 'workspace 4'
     alt-5 = 'workspace 5'
-    alt-8 = 'workspace 8' # Docker
+    alt-6 = 'workspace 6' # Yaak
+    alt-7 = 'workspace 7' # Notion
+    alt-8 = 'workspace 8' # WhatsApp
     alt-9 = 'workspace 9' # Chrome
+    alt-0 = 'workspace 10' # Docker
 
     # Move window to workspace (and follow it)
     alt-shift-1 = 'move-node-to-workspace 1 --focus-follows-window'
@@ -153,8 +176,11 @@ run = 'fullscreen'
     alt-shift-3 = 'move-node-to-workspace 3 --focus-follows-window'
     alt-shift-4 = 'move-node-to-workspace 4 --focus-follows-window'
     alt-shift-5 = 'move-node-to-workspace 5 --focus-follows-window'
+    alt-shift-6 = 'move-node-to-workspace 6 --focus-follows-window'
+    alt-shift-7 = 'move-node-to-workspace 7 --focus-follows-window'
     alt-shift-8 = 'move-node-to-workspace 8 --focus-follows-window'
     alt-shift-9 = 'move-node-to-workspace 9 --focus-follows-window'
+    alt-shift-0 = 'move-node-to-workspace 10 --focus-follows-window'
 
     # Toggle between the two most recent workspaces
     alt-tab = 'workspace-back-and-forth'
