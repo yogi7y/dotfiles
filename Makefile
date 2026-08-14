@@ -2,7 +2,7 @@
 
 # aerospace is intentionally excluded — its config is per-machine, selected with
 # `make aerospace-personal` / `make aerospace-work` (see below), not stowed.
-STOW_PACKAGES := atuin claude cursor ghostty git karabiner starship tmux vscode zsh
+STOW_PACKAGES := atuin claude cursor ghostty git herdr karabiner starship tmux vscode zsh
 
 AEROSPACE_DIR := $(HOME)/.config/aerospace
 AEROSPACE_OUT := $(AEROSPACE_DIR)/aerospace.toml

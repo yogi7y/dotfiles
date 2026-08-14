@@ -1,0 +1,115 @@
+# herdr configuration — keymaps ported from tmux/.tmux.conf
+# Reload after edits: `herdr server reload-config` or prefix+r
+
+onboarding = false
+
+# ───────────────────────────────────────────
+# Theme — Catppuccin Mocha, matching Ghostty
+# ───────────────────────────────────────────
+[theme]
+name = "catppuccin"
+auto_switch = false
+
+[theme.custom]
+# surface_dim is the highlight behind the active agent/workspace row, but in
+# catppuccin it equals the panel background (#1e1e2e), so the highlight is
+# invisible. Bumped to surface0 — the same shade the tmux status bar used for
+# the current window.
+surface_dim = "#313244"
+
+# ───────────────────────────────────────────
+# Terminal
+# ───────────────────────────────────────────
+[terminal]
+# tmux: split-window -c "#{pane_current_path}"
+new_cwd = "follow"
+# login shells on macOS so Homebrew PATH is set up in new panes
+shell_mode = "auto"
+
+# ───────────────────────────────────────────
+# Keybindings
+# ───────────────────────────────────────────
+[keys]
+# tmux: set -g prefix C-s
+prefix = "ctrl+s"
+
+# tmux: bind | split-window -h   (side by side — herdr calls this "vertical")
+split_vertical = ["prefix+|", "prefix+v"]
+# tmux: bind - split-window -v   (stacked — herdr calls this "horizontal")
+split_horizontal = "prefix+minus"
+
+# tmux: bind h/j/k/l select-pane (same as herdr defaults, kept explicit)
+focus_pane_left = "prefix+h"
+focus_pane_down = "prefix+j"
+focus_pane_up = "prefix+k"
+focus_pane_right = "prefix+l"
+
+# tmux: bind r source-file ~/.tmux.conf. herdr's default for this is prefix+shift+r;
+# swapped with resize mode so prefix+r keeps its tmux meaning.
+reload_config = "prefix+r"
+# tmux: bind -r H/J/K resize-pane. herdr has no repeatable bindings (upstream #599),
+# so resizing is modal: prefix+shift+r, then h/j/k/l, then esc.
+resize_mode = "prefix+shift+r"
+
+# Fuzzy session navigator (workspaces + tabs + panes) on a prefix double-tap.
+# Displaces settings, which moves to prefix+shift+s.
+goto = "prefix+s"
+settings = "prefix+shift+s"
+
+# Tabs = tmux windows. All of these match tmux, kept explicit.
+new_tab = "prefix+c"
+next_tab = "prefix+n"
+previous_tab = "prefix+p"
+switch_tab = "prefix+1..9"
+
+# herdr-only, but the natural extension of tmux's prefix+1..9
+switch_workspace = "prefix+alt+1..9"
+
+# Agent panel navigation — the sidebar's agent list is the agents-only view.
+# shift+n / shift+p are taken (new_workspace / rename_pane), so cycling stays on alt.
+focus_agent = "prefix+shift+1..9"
+next_agent = "prefix+alt+n"
+previous_agent = "prefix+alt+p"
+
+# Sidebar toggle. cmd+backslash is a direct chord — it only reaches herdr if
+# Ghostty forwards it, so prefix+backslash stays as the reliable binding.
+toggle_sidebar = ["prefix+backslash", "cmd+backslash"]
+
+# No tmux equivalents, listed so the mapping is documented:
+#   base-index / pane-base-index / renumber-windows — no herdr concept
+#   escape-time                                     — handled natively
+#   bind L switch-client -l                         — no "last workspace" action
+#   bind -n C-k (clear screen + history)            — no clear-scrollback action;
+#                                                     ctrl+l still clears the screen
+
+# ───────────────────────────────────────────
+# UI
+# ───────────────────────────────────────────
+[ui]
+# tmux: set -g mouse on
+mouse_capture = true
+# tmux: set -g set-clipboard on
+copy_on_select = true
+# tmux created windows instantly, no name prompt
+prompt_new_tab_name = false
+# No pane chrome at all. herdr can't draw only the split divider — pane_borders
+# is all edges or none — so borders are off and panes are separated by a
+# one-cell blank gutter instead.
+pane_borders = false
+pane_gaps = true
+# Agent panel ordering: "spaces" groups by workspace, "priority" is an
+# attention queue (blocked first)
+agent_panel_sort = "spaces"
+
+# ───────────────────────────────────────────
+# Session — replaces tmux-resurrect + tmux-continuum
+# ───────────────────────────────────────────
+show_agent_labels_on_pane_borders = true
+[session]
+resume_agents_on_restore = true
+
+[experimental]
+pane_history = false
+
+[ui.toast]
+delivery = "herdr"

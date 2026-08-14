@@ -12,7 +12,7 @@ cd "$DOTFILES_DIR"
 
 # Stow packages to link into $HOME (top-level dirs that mirror the home layout).
 # aerospace is excluded — its config is per-machine (see step 8).
-STOW_PACKAGES=(atuin claude cursor ghostty git karabiner starship tmux vscode zsh)
+STOW_PACKAGES=(atuin claude cursor ghostty git herdr karabiner starship tmux vscode zsh)
 
 info() { printf '\033[1;34m==>\033[0m %s\n' "$1"; }
 skip() { printf '\033[1;33m--\033[0m  %s\n' "$1"; }

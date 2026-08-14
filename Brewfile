@@ -17,6 +17,7 @@ brew "git-delta"   # git diff pager
 brew "zoxide"      # smarter cd
 brew "rbenv"       # ruby version manager
 brew "tmux"        # terminal multiplexer
+brew "herdr"       # agent multiplexer (tmux replacement, agent-state aware)
 brew "jq"          # JSON processor (used by the Claude statusline)
 brew "fvm"         # flutter version manager
 
