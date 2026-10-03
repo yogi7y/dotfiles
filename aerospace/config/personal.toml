@@ -1,12 +1,11 @@
 # AeroSpace configuration — PERSONAL machine
 # Docs: https://nikitabobko.github.io/AeroSpace/guide
-# This is a full, standalone config. Tailor personal-specific app rules here.
-# Shared changes (keybindings, gaps) must also be mirrored into work.toml.
 
 config-version = 2
 
 # Launch default apps
 after-startup-command = [
+    'exec-and-forget open -a Ghostty',
     'exec-and-forget open -a Tasks',
 ]
 
@@ -26,8 +25,9 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
 key-mapping.preset = 'qwerty'
 
-# Workspaces: 1 = terminal, 2 = code, 3 = browser, 4 = tasks, 5 = spare, 8 = docker, 9 = chrome
-persistent-workspaces = ["1", "2", "3", "4", "5", "8"]
+# Workspaces: 1 terminal, 2 AI, 3 browser, 4 tasks, 5 editor, 6 API/database,
+# 7 knowledge, 8 messages, 9 Chrome, 10 utilities, E files, S simulator
+persistent-workspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "E", "S"]
 
 gaps.inner.horizontal = 0
 gaps.inner.vertical =   0
@@ -44,7 +44,19 @@ run = ['move-node-to-workspace 1', 'fullscreen']
 
 [[on-window-detected]]
 if.app-id = 'com.microsoft.VSCode'
+run = ['move-node-to-workspace 5', 'fullscreen']
+
+[[on-window-detected]]
+if.app-id = 'com.todesktop.230313mzl4w4u92' # Cursor
+run = ['move-node-to-workspace 5', 'fullscreen']
+
+[[on-window-detected]]
+if.app-id = 'com.openai.codex'
 run = ['move-node-to-workspace 2', 'fullscreen']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.iphonesimulator' # floating so several simulators can overlap at native size
+run = ['layout floating', 'move-node-to-workspace S']
 
 [[on-window-detected]]
 if.app-id = 'company.thebrowser.Browser' # Arc
@@ -60,11 +72,15 @@ run = ['move-node-to-workspace 4', 'fullscreen']
 
 [[on-window-detected]]
 if.app-id = 'com.anthropic.claudefordesktop'
-run = ['move-node-to-workspace 5', 'fullscreen']
+run = ['move-node-to-workspace 2', 'fullscreen']
 
 [[on-window-detected]]
 if.app-id = 'app.yaak.desktop' # Yaak
-run = ['move-node-to-workspace 6', 'fullscreen']
+run = ['move-node-to-workspace 6', 'layout tiling']
+
+[[on-window-detected]]
+if.app-id = 'com.tinyapp.TablePlus'
+run = ['move-node-to-workspace 6', 'layout tiling']
 
 [[on-window-detected]]
 if.app-id = 'notion.id' # Notion
@@ -79,12 +95,32 @@ if.app-id = 'net.whatsapp.WhatsApp' # WhatsApp
 run = ['move-node-to-workspace 8', 'fullscreen']
 
 [[on-window-detected]]
-if.app-id = 'com.docker.docker'
+if.app-id = 'com.electron.dockerdesktop' # Docker Desktop (window is the Electron GUI, not com.docker.docker)
 run = ['move-node-to-workspace 10', 'fullscreen']
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.Excel' # open alongside Docker
+run = ['move-node-to-workspace 10', 'fullscreen']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.finder'
+run = ['layout tiling', 'move-node-to-workspace E', 'fullscreen'] # force tiling; Finder otherwise opens floating and can't go fullscreen
 
 # Apps that work better floating
 [[on-window-detected]]
-if.app-id = 'com.apple.finder'
+if.app-id = 'com.electron.wispr-flow' # Wispr Flow
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'org.qbittorrent.qBittorrent'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'ch.protonvpn.mac' # Proton VPN
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Preview'
 run = 'layout floating'
 
 [[on-window-detected]]
@@ -159,16 +195,18 @@ run = 'fullscreen'
     alt-equal = 'resize smart +50'
 
     # Switch workspace
-    alt-1 = 'workspace 1'
+    alt-1 = ['workspace 1', 'exec-and-forget open -a Ghostty']
     alt-2 = 'workspace 2'
     alt-3 = 'workspace 3'
     alt-4 = 'workspace 4'
     alt-5 = 'workspace 5'
-    alt-6 = 'workspace 6' # Yaak
-    alt-7 = 'workspace 7' # Notion
+    alt-6 = 'workspace 6' # API/database
+    alt-7 = 'workspace 7' # Knowledge
     alt-8 = 'workspace 8' # WhatsApp
     alt-9 = 'workspace 9' # Chrome
-    alt-0 = 'workspace 10' # Docker
+    alt-0 = 'workspace 10' # Utilities
+    alt-e = 'workspace E' # Finder
+    alt-s = 'workspace S' # Simulator
 
     # Move window to workspace (and follow it)
     alt-shift-1 = 'move-node-to-workspace 1 --focus-follows-window'
@@ -181,6 +219,8 @@ run = 'fullscreen'
     alt-shift-8 = 'move-node-to-workspace 8 --focus-follows-window'
     alt-shift-9 = 'move-node-to-workspace 9 --focus-follows-window'
     alt-shift-0 = 'move-node-to-workspace 10 --focus-follows-window'
+    alt-shift-e = 'move-node-to-workspace E --focus-follows-window'
+    alt-shift-s = 'move-node-to-workspace S --focus-follows-window'
 
     # Toggle between the two most recent workspaces
     alt-tab = 'workspace-back-and-forth'

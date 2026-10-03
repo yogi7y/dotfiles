@@ -1,7 +1,6 @@
 # Dotfiles — run `make` or `make help` to see targets.
 
-# aerospace is intentionally excluded — its config is per-machine, selected with
-# `make aerospace-personal` / `make aerospace-work` (see below), not stowed.
+# aerospace is not stowed; link its config with `make aerospace-personal`.
 STOW_PACKAGES := atuin claude cursor ghostty git herdr karabiner starship tmux vscode zsh
 
 AEROSPACE_DIR := $(HOME)/.config/aerospace
@@ -9,7 +8,7 @@ AEROSPACE_OUT := $(AEROSPACE_DIR)/aerospace.toml
 
 .DEFAULT_GOAL := help
 
-.PHONY: help install brew stow unstow extensions update aerospace-personal aerospace-work
+.PHONY: help install brew stow unstow extensions update aerospace-personal
 
 help: ## Show this help
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) \
@@ -43,10 +42,3 @@ aerospace-personal: ## Use the personal AeroSpace config on this machine
 	@ln -sfn $(CURDIR)/aerospace/config/personal.toml $(AEROSPACE_OUT)
 	@command -v aerospace >/dev/null 2>&1 && aerospace reload-config || true
 	@echo "aerospace: using personal config"
-
-aerospace-work: ## Use the work AeroSpace config on this machine
-	@[ -L "$(AEROSPACE_DIR)" ] && rm -f "$(AEROSPACE_DIR)" || true  # clear stale stow-folded symlink
-	@mkdir -p "$(AEROSPACE_DIR)"
-	@ln -sfn $(CURDIR)/aerospace/config/work.toml $(AEROSPACE_OUT)
-	@command -v aerospace >/dev/null 2>&1 && aerospace reload-config || true
-	@echo "aerospace: using work config"

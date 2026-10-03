@@ -26,7 +26,6 @@ those manually.
 | `make extensions` | Install VS Code / Cursor extensions |
 | `make update` | Update brew packages, then re-stow |
 | `make aerospace-personal` | Use the personal AeroSpace config on this machine |
-| `make aerospace-work` | Use the work AeroSpace config on this machine |
 
 ## Layout
 
@@ -36,6 +35,5 @@ Each top-level directory is a stow package mirroring the `$HOME` layout (e.g.
 VS Code and Cursor share one config: the canonical `settings.json`/`keybindings.json` live in
 the `vscode` package, and the `cursor` package symlinks to them.
 
-AeroSpace is per-machine (its app routing differs between work and personal). Its configs live
-in `aerospace/config/` and are **not** stowed — after install, pick one with
-`make aerospace-personal` or `make aerospace-work`.
+AeroSpace uses `aerospace/config/personal.toml` and is **not** stowed. After install, link it
+with `make aerospace-personal`.
