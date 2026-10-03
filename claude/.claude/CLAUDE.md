@@ -15,6 +15,11 @@ run reports, status updates, explanations, and post-task summaries all use it to
 - Break down freely: sub-bullets, short fragments, small groupings all welcome if they make a
   point land quicker
 - If elaboration is needed, I'll ask
+- **Instructions, not explanations — give steps only.** "Do this, then this, then this."
+  No rationale, no background, no justification, no "why this works" — unless I ask.
+  This overrides any project-level rule that says to teach or explain proactively
+- **A follow-up question is the trigger to explain** — when I ask why, explain properly
+  and at length. Until then, steps only
 
 
 

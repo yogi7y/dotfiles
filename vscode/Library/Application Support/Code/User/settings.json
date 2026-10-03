@@ -170,8 +170,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "window.commandCenter": false,
-  "gitlens.ai.model": "vscode",
-  "gitlens.ai.vscode.model": "copilot:gpt-4.1",
   "html.preview.doubleClickToSwitchToEditor": false,
   "git.autofetch": true,
   "kotlin.languageServer.enabled": false,
@@ -188,4 +186,6 @@
   "cursor.general.disableHttp2": true,
   "git.blame.statusBarItem.enabled": true,
   "githubPullRequests.fileListLayout": "tree",
+  "update.showReleaseNotes": false,
+  "workbench.experimental.modernUI": false,
 }
