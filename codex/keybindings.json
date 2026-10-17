@@ -1,0 +1,14 @@
+[
+  {
+    "command": "stepWorkspaceLayout",
+    "key": "Command+Shift+\\"
+  },
+  {
+    "command": "toggleSidebar",
+    "key": "CmdOrCtrl+Shift+S"
+  },
+  {
+    "command": "toggleSidebar",
+    "key": "Command+\\"
+  }
+]

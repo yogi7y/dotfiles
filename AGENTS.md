@@ -22,7 +22,7 @@ git clone <repo> ~/dotfiles && cd ~/dotfiles && make install
 
 `make install` runs `bootstrap.sh`: installs Homebrew, applies the `Brewfile`, stows every
 package, installs tmux + editor plugins. Every step is idempotent (safe to re-run). Run
-`make help` for individual targets (`brew`, `stow`, `extensions`, `update`). Heavy apps
+`make help` for individual targets (`brew`, `stow`, `extensions`, `update`, `ai-export`, `ai-apply`). Heavy apps
 (Docker, Android Studio, …) are intentionally not in the Brewfile — install those manually.
 
 ## Working here
@@ -40,3 +40,10 @@ package, installs tmux + editor plugins. Every step is idempotent (safe to re-ru
   Edit the repo file; changes are live and AeroSpace auto-reloads.
 - Add a Homebrew tool by adding a line to `Brewfile`; add an editor extension via
   `editor/extensions.txt`.
+
+## AI settings
+
+- `codex/` and `codexbar/` are portable snapshots, not Stow packages. Use `make ai-export` after changing app settings; use `make ai-apply` after pulling changes. `make stow` and bootstrap also apply them.
+- Keep the export allowlists narrow. Never export credentials, MCP paths, marketplace cache paths, hooks, trust state, sessions or databases. Preserve local values when applying snapshots.
+- Keep CodexBar's runtime config local; it can contain credentials. Share provider metadata and the official portable preferences export only.
+- Require Python 3.11 or newer for the sync script. Back up existing local settings before replacement.

@@ -1,0 +1,94 @@
+"service_tier" = "default"
+"model" = "gpt-6.1-sol"
+"model_reasoning_effort" = "high"
+
+["desktop"]
+"followUpQueueMode" = "steer"
+"external-agent-import-sync-item-types" = "all"
+"external-agent-import-sync-enabled" = true
+"conversationDetailMode" = "STEPS_COMMANDS"
+"ambient-suggestions-enabled" = true
+"appearanceTheme" = "dark"
+"appearanceDarkCodeThemeId" = "catppuccin"
+"appearanceLightCodeThemeId" = "codex"
+"avatar-overlay-pet-visible" = false
+"dock-icon-preference" = "codex-system"
+"usePointerCursors" = false
+"sansFontSize" = 15
+"primary-number-shortcut-target" = "tabs"
+"appearanceDiffMarkerStyle" = "symbols"
+"pagesFullWidth" = false
+
+["desktop"."appearanceDarkChromeTheme"]
+"accent" = "#cba6f7"
+"accentSource" = "custom"
+"contrast" = 60
+"ink" = "#cdd6f4"
+"opaqueWindows" = true
+"surface" = "#1e1e2e"
+
+["desktop"."appearanceDarkChromeTheme"."fonts"]
+"code" = "\"JetBrainsMono Nerd Font Mono\""
+
+["desktop"."appearanceDarkChromeTheme"."fonts"."codeFace"]
+"family" = "JetBrainsMono Nerd Font Mono"
+"fullName" = "JetBrainsMono NFM Medium"
+"postscriptName" = "JetBrainsMonoNFM-Medium"
+
+["desktop"."appearanceDarkChromeTheme"."semanticColors"]
+"diffAdded" = "#a6e3a1"
+"diffRemoved" = "#f38ba8"
+"skill" = "#cba6f7"
+
+["desktop"."appearanceLightChromeTheme"]
+"accent" = "#0169cc"
+"accentSource" = "custom"
+"contrast" = 45
+"ink" = "#0d0d0d"
+"opaqueWindows" = false
+"surface" = "#ffffff"
+
+["desktop"."appearanceLightChromeTheme"."fonts"]
+
+["desktop"."appearanceLightChromeTheme"."semanticColors"]
+"diffAdded" = "#00a240"
+"diffRemoved" = "#e02e2a"
+"skill" = "#751ed9"
+
+["plugins"]
+
+["plugins"."codex-app-tools@openai-bundled"]
+"enabled" = true
+
+["plugins"."browser@openai-bundled"]
+"enabled" = true
+
+["plugins"."unified-computer-use@openai-bundled"]
+"enabled" = true
+
+["plugins"."visualize@openai-bundled"]
+"enabled" = true
+
+["plugins"."documents@openai-primary-runtime"]
+"enabled" = true
+
+["plugins"."pdf@openai-primary-runtime"]
+"enabled" = true
+
+["plugins"."spreadsheets@openai-primary-runtime"]
+"enabled" = true
+
+["plugins"."presentations@openai-primary-runtime"]
+"enabled" = true
+
+["plugins"."template-creator@openai-primary-runtime"]
+"enabled" = true
+
+["plugins"."computer-use@openai-bundled"]
+"enabled" = true
+
+["plugins"."swift-lsp@claude-plugins-official"]
+"enabled" = true
+
+["plugins"."code-review@openai-bundled"]
+"enabled" = true

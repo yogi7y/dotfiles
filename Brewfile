@@ -7,6 +7,7 @@ tap "nikitabobko/tap"   # aerospace
 tap "leoafarias/fvm"    # flutter version manager
 
 # ---------- CLI tools ----------
+brew "python@3.14" # TOML support for portable AI settings
 brew "stow"        # symlink manager for these dotfiles
 brew "eza"         # ls replacement
 brew "bat"         # cat replacement
