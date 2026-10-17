@@ -1,0 +1,12 @@
+{
+  "preferences": {
+    "costSummaryDisplayStyle": "costSubmenu",
+    "costUsageEnabled": true,
+    "hidePersonalInfo": true,
+    "mergedOverviewLayout": "compact",
+    "refreshFrequency": "adaptive",
+    "showOptionalCreditsAndExtraUsage": true,
+    "usageBarsShowUsed": true
+  },
+  "version": 1
+}
