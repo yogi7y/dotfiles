@@ -26,8 +26,8 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 key-mapping.preset = 'qwerty'
 
 # Workspaces: 1 terminal, 2 AI, 3 browser, 4 tasks, 5 editor, 6 API/database,
-# 7 knowledge, 8 messages, 9 Chrome, 10 utilities, E files, S simulator
-persistent-workspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "E", "S"]
+# 7 knowledge, 8 messages, 9 Chrome, 10 utilities, E files, M media, S simulator
+persistent-workspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "E", "M", "S"]
 
 gaps.inner.horizontal = 0
 gaps.inner.vertical =   0
@@ -59,7 +59,7 @@ if.app-id = 'com.apple.iphonesimulator' # floating so several simulators can ove
 run = ['layout floating', 'move-node-to-workspace S']
 
 [[on-window-detected]]
-if.app-id = 'company.thebrowser.Browser' # Arc
+if.app-id = 'app.zen-browser.zen' # Zen
 run = ['move-node-to-workspace 3', 'fullscreen']
 
 [[on-window-detected]]
@@ -157,7 +157,7 @@ run = 'layout floating'
 
 [[on-window-detected]]
 if.app-id = 'com.westbridge.stremio5-mac' # Stremio
-run = 'layout floating'
+run = ['layout floating', 'move-node-to-workspace M']
 
 [[on-window-detected]]
 if.app-id = 'org.localsend.localsendApp' # LocalSend
@@ -206,6 +206,7 @@ run = 'fullscreen'
     alt-9 = 'workspace 9' # Chrome
     alt-0 = 'workspace 10' # Utilities
     alt-e = 'workspace E' # Finder
+    alt-m = 'workspace M' # Media
     alt-s = 'workspace S' # Simulator
 
     # Move window to workspace (and follow it)
@@ -220,6 +221,7 @@ run = 'fullscreen'
     alt-shift-9 = 'move-node-to-workspace 9 --focus-follows-window'
     alt-shift-0 = 'move-node-to-workspace 10 --focus-follows-window'
     alt-shift-e = 'move-node-to-workspace E --focus-follows-window'
+    alt-shift-m = 'move-node-to-workspace M --focus-follows-window'
     alt-shift-s = 'move-node-to-workspace S --focus-follows-window'
 
     # Toggle between the two most recent workspaces
