@@ -1,0 +1,197 @@
+From 2f3fe2dc43b70af072865107497ce3b0d541b938 Mon Sep 17 00:00:00 2001
+From: Hritik Utekar <hritikdrocks@gmail.com>
+Date: Thu, 17 Sep 2026 18:24:08 +0530
+Subject: [PATCH] Fix window detection for apps reported with invalid PID (-1)
+
+Some apps (e.g. Xcode 27 DeviceHub, launched via DevicesTrampoline) are
+reported by LaunchServices with processIdentifier == -1. AXUIElementCreateApplication
+and AXObserverCreate fail for such PIDs, so the app is never registered:
+it is missing from list-apps/list-windows, debug-windows captures nothing,
+and on-window-detected callbacks never fire.
+
+Add NSRunningApplication.resolvedProcessIdentifier, which falls back to a
+live process lookup (libproc executable-path match) when the reported PID
+is invalid, and use it for app registration, AX element creation, observer
+subscription, and app-map keys. Adds ResolvedPidTest coverage.
+---
+ Sources/AppBundle/tree/MacApp.swift           | 15 +++----
+ Sources/AppBundle/util/AxSubscription.swift   |  4 +-
+ .../util/NSRunningApplicationEx.swift         | 37 ++++++++++++++++++
+ Sources/AppBundleTests/ResolvedPidTest.swift  | 39 +++++++++++++++++++
+ 4 files changed, 86 insertions(+), 9 deletions(-)
+ create mode 100644 Sources/AppBundleTests/ResolvedPidTest.swift
+
+diff --git a/Sources/AppBundle/tree/MacApp.swift b/Sources/AppBundle/tree/MacApp.swift
+index 94abdf700..2898d4163 100644
+--- a/Sources/AppBundle/tree/MacApp.swift
++++ b/Sources/AppBundle/tree/MacApp.swift
+@@ -35,7 +35,7 @@ final class MacApp: AbstractApp {
+     ) {
+         self.nsApp = nsApp
+         self.axApp = .init(axApp)
+-        self.pid = nsApp.processIdentifier
++        self.pid = nsApp.resolvedProcessIdentifier
+         self.rawAppBundleId = nsApp.bundleIdentifier
+         self.appId = nsApp.bundleIdentifier.flatMap { KnownBundleId.init(rawValue: $0) }
+         assert(!axSubscriptions.isEmpty)
+@@ -49,7 +49,7 @@ final class MacApp: AbstractApp {
+         // Don't perceive any of the lock screen windows as real windows
+         // Otherwise, false positive ax notifications might trigger that lead to gcWindows
+         if nsApp.bundleIdentifier == lockScreenAppBundleId { return nil }
+-        let pid = nsApp.processIdentifier
++        let pid = nsApp.resolvedProcessIdentifier
+         // AX requests crash if you send them to yourself
+         if pid == myPid { return nil }
+ 
+@@ -64,12 +64,12 @@ final class MacApp: AbstractApp {
+ 
+         let thread = Thread {
+             $axTaskLocalAppThreadToken.withValue(AxAppThreadToken(pid: pid, idForDebug: nsApp.idForDebug)) {
+-                let axApp = AXUIElementCreateApplication(nsApp.processIdentifier)
++                let axApp = AXUIElementCreateApplication(pid)
+                 let handlers: HandlerToNotifKeyMapping = unsafe [
+                     (refreshObs, [kAXWindowCreatedNotification, kAXFocusedWindowChangedNotification]),
+                 ]
+                 let job = RunLoopJob(.cancellable)
+-                let subscriptions = (try? unsafe AxSubscription.bulkSubscribe(nsApp, axApp, job, handlers)) ?? []
++                let subscriptions = (try? unsafe AxSubscription.bulkSubscribe(pid, axApp, job, handlers)) ?? []
+                 let isGood = !subscriptions.isEmpty
+                 let app = isGood ? MacApp(nsApp, axApp, subscriptions, Thread.current) : nil
+ 
+@@ -267,8 +267,9 @@ final class MacApp: AbstractApp {
+         return try await withThrowingTaskGroup(of: (pid_t, [UInt32]).self, returning: [MacApp: [UInt32]].self) { group in
+             func refreshTheApp(_ nsApp: NSRunningApplication) {
+                 group.addTask { @Sendable @MainActor in
+-                    guard let app = try await MacApp.getOrRegister(nsApp) else { return (nsApp.processIdentifier, []) }
+-                    return (nsApp.processIdentifier, try await app.refreshAndGetAliveWindowIds(frontmostAppBundleId: frontmostAppBundleId))
++                    let pid = nsApp.resolvedProcessIdentifier
++                    guard let app = try await MacApp.getOrRegister(nsApp) else { return (pid, []) }
++                    return (pid, try await app.refreshAndGetAliveWindowIds(frontmostAppBundleId: frontmostAppBundleId))
+                 }
+             }
+             // Register new apps
+@@ -378,7 +379,7 @@ private final class AxWindow {
+             (movedObs, [kAXMovedNotification]),
+             (resizedObs, [kAXResizedNotification]),
+         ]
+-        let subscriptions = try unsafe AxSubscription.bulkSubscribe(nsApp, ax, job, handlers)
++        let subscriptions = try unsafe AxSubscription.bulkSubscribe(nsApp.resolvedProcessIdentifier, ax, job, handlers)
+         return !subscriptions.isEmpty ? AxWindow(windowId: windowId, ax, subscriptions) : nil
+     }
+ }
+diff --git a/Sources/AppBundle/util/AxSubscription.swift b/Sources/AppBundle/util/AxSubscription.swift
+index 658841dd2..9bed53065 100644
+--- a/Sources/AppBundle/util/AxSubscription.swift
++++ b/Sources/AppBundle/util/AxSubscription.swift
+@@ -25,7 +25,7 @@ final class AxSubscription {
+     }
+ 
+     static func bulkSubscribe(
+-        _ nsApp: NSRunningApplication,
++        _ pid: pid_t,
+         _ ax: AXUIElement,
+         _ job: RunLoopJob,
+         _ handlerToNotifKeyMapping: HandlerToNotifKeyMapping,
+@@ -34,7 +34,7 @@ final class AxSubscription {
+         var visitedNotifKeys: Set<String> = []
+         for unsafe (handler, notifKeys) in unsafe handlerToNotifKeyMapping {
+             try job.checkCancellation()
+-            guard let obs = unsafe AXObserver.new(nsApp.processIdentifier, handler) else { return [] }
++            guard let obs = unsafe AXObserver.new(pid, handler) else { return [] }
+             let subscription = AxSubscription(obs: obs, ax: ax)
+             for key: String in notifKeys {
+                 try job.checkCancellation()
+diff --git a/Sources/AppBundle/util/NSRunningApplicationEx.swift b/Sources/AppBundle/util/NSRunningApplicationEx.swift
+index 03be0ef33..8cb90d301 100644
+--- a/Sources/AppBundle/util/NSRunningApplicationEx.swift
++++ b/Sources/AppBundle/util/NSRunningApplicationEx.swift
+@@ -1,7 +1,44 @@
+ import AppKit
++import Darwin
+ 
+ extension NSRunningApplication {
+     var idForDebug: String {
+         "PID: \(processIdentifier) ID: \(bundleIdentifier ?? executableURL?.description ?? "")"
+     }
++
++    /// processIdentifier as reported by LaunchServices, falling back to a live
++    /// process lookup when LaunchServices reports an invalid PID.
++    /// Some apps (e.g. Xcode 27 DeviceHub, launched via DevicesTrampoline) are
++    /// reported with processIdentifier == -1. AXUIElementCreateApplication and
++    /// AXObserverCreate fail for such PIDs, so the app can never be registered.
++    var resolvedProcessIdentifier: pid_t {
++        let reported = processIdentifier
++        if reported > 0 { return reported }
++        guard let execPath = executableURL?.path else { return reported }
++        let capacity = Int(proc_listpids(UInt32(PROC_ALL_PIDS), 0, nil, 0))
++        guard capacity > 0 else { return reported }
++        var pids = [pid_t](repeating: 0, count: capacity)
++        let bytes = pids.withUnsafeMutableBytes { buf -> Int32 in
++            guard let base = buf.baseAddress else { return -1 }
++            return unsafe proc_listpids(UInt32(PROC_ALL_PIDS), 0, base, Int32(buf.count))
++        }
++        guard bytes > 0 else { return reported }
++        let found = Int(bytes) / MemoryLayout<pid_t>.size
++        // PROC_PIDPATHINFO_MAXSIZE (4 * MAXPATHLEN) is not importable into Swift
++        let pathBufSize = 4 * 1024
++        for i in 0 ..< min(found, pids.count) {
++            let candidate = pids[i]
++            guard candidate > 0 && candidate != myPid else { continue }
++            var path = [CChar](repeating: 0, count: pathBufSize)
++            let len = path.withUnsafeMutableBufferPointer { buf -> Int32 in
++                guard let base = buf.baseAddress else { return -1 }
++                return unsafe proc_pidpath(candidate, base, UInt32(buf.count))
++            }
++            guard len > 0 else { continue }
++            let candidatePath = String(decoding: path.prefix(while: { $0 != 0 }).map { UInt8(bitPattern: $0) }, as: UTF8.self)
++            guard candidatePath == execPath else { continue }
++            return candidate
++        }
++        return reported
++    }
+ }
+diff --git a/Sources/AppBundleTests/ResolvedPidTest.swift b/Sources/AppBundleTests/ResolvedPidTest.swift
+new file mode 100644
+index 000000000..ab972b33c
+--- /dev/null
++++ b/Sources/AppBundleTests/ResolvedPidTest.swift
+@@ -0,0 +1,39 @@
++@testable import AppBundle
++import AppKit
++import Darwin
++import XCTest
++
++final class ResolvedPidTest: XCTestCase {
++    func testAppsWithValidPidsResolveToTheirReportedPids() {
++        var checked = 0
++        for app in NSWorkspace.shared.runningApplications {
++            if app.processIdentifier > 0 {
++                assertEquals(app.resolvedProcessIdentifier, app.processIdentifier)
++                checked += 1
++            }
++        }
++        assertTrue(checked > 0)
++    }
++
++    func testAppsWithInvalidPidsResolveToLivePidWithMatchingExecutable() {
++        // Covers the fallback for apps LaunchServices reports with an invalid
++        // PID (e.g. Xcode 27 DeviceHub reported as -1). Vacuous when no such
++        // app is running.
++        for app in NSWorkspace.shared.runningApplications {
++            if app.processIdentifier > 0 { continue }
++            let resolved = app.resolvedProcessIdentifier
++            if resolved <= 0 { continue } // Resolver gives up honestly
++            assertEquals(kill(resolved, 0), 0) // Must be a live process
++            if let execPath = app.executableURL?.path {
++                var path = [CChar](repeating: 0, count: 4 * 1024)
++                let len = path.withUnsafeMutableBufferPointer { buf -> Int32 in
++                    guard let base = buf.baseAddress else { return -1 }
++                    return unsafe proc_pidpath(resolved, base, UInt32(buf.count))
++                }
++                assertTrue(len > 0)
++                let actualPath = String(decoding: path.prefix(while: { $0 != 0 }).map { UInt8(bitPattern: $0) }, as: UTF8.self)
++                assertEquals(actualPath, execPath)
++            }
++        }
++    }
++}
