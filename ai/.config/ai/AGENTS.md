@@ -32,6 +32,8 @@ run reports, status updates, explanations, and post-task summaries all use it to
   and lists explaining individual files.
 - Include an approach only when a brief, high-level explanation helps the reader.
 - Include concise validation and material limitations when relevant.
+- Optionally link to external conventions or resources mentioned in a PR when
+  the reference helps the reader. Do not add links just for completeness.
 - Never mention AI-generated code in commits, PR descriptions, or code comments.
 - Do not add a `Co-Authored-By` trailer to commit messages.
 

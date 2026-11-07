@@ -5,7 +5,7 @@ Personal dotfiles managed with GNU Stow. Each top-level directory is a Stow pack
 
 ## Rules
 
-- Use AGENTS.md for shared project instructions. Keep CLAUDE.md as an import of
+- Follow [AGENTS.md](https://github.com/agentsmd/agents.md) for shared project instructions. Keep CLAUDE.md as an import of
   this file; do not duplicate its rules.
 - This repository targets `main` for pull requests; it has no `develop` branch.
 - Keep PR descriptions short: start with a TL;DR, then explain the problem and
