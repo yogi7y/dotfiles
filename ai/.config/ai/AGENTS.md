@@ -21,7 +21,14 @@ run reports, status updates, explanations, and post-task summaries all use it to
 - **A follow-up question is the trigger to explain** — when I ask why, explain properly
   and at length. Until then, steps only
 
-## Git and pull requests
+## Git
+
+- Never mention AI-generated code in commits, PR descriptions, or code comments.
+- Do not add a `Co-Authored-By` trailer to commit messages.
+
+## Pull requests
+
+### Creation
 
 - Target `develop` when the repository has it. Otherwise follow the repository's
   documented target or its default branch.
@@ -34,8 +41,18 @@ run reports, status updates, explanations, and post-task summaries all use it to
 - Include concise validation and material limitations when relevant.
 - Optionally link to external conventions or resources mentioned in a PR when
   the reference helps the reader. Do not add links just for completeness.
-- Never mention AI-generated code in commits, PR descriptions, or code comments.
-- Do not add a `Co-Authored-By` trailer to commit messages.
+
+### Review comments
+
+- Review every PR comment and use judgment to decide whether a change is warranted.
+- Act on valid feedback without asking for routine confirmation. Verify and push
+  the change, then reply `Done` to the original comment thread.
+- For questions, disagreements, or feedback that does not warrant a change, reply
+  in the original thread with a short, direct assessment and any relevant trade-off.
+- Acknowledge every comment on the PR itself; a chat summary is not a substitute.
+  For top-level comments without threads, link to the original comment in the reply.
+- If a comment mixes a question and an action, reply `Done` for the completed action
+  and answer the question briefly. Never claim completion while work is pending.
 
 ## Flutter
 
