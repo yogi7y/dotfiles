@@ -41,6 +41,7 @@ if [ -f .gitmodules ]; then
 fi
 
 # ---------- 4. Stow packages ----------
+python3 scripts/setup-ai.py
 info "Linking config with stow…"
 for pkg in "${STOW_PACKAGES[@]}"; do
   if [ -d "$pkg" ]; then
