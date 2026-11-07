@@ -8,7 +8,7 @@ AEROSPACE_OUT := $(AEROSPACE_DIR)/aerospace.toml
 
 .DEFAULT_GOAL := help
 
-.PHONY: help install brew stow unstow extensions update aerospace-personal
+.PHONY: help install brew stow unstow extensions update aerospace-personal ai ai-check
 
 help: ## Show this help
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) \
@@ -21,7 +21,14 @@ brew: ## Install/update Homebrew packages from the Brewfile
 	@brew bundle --file=Brewfile
 
 stow: ## Symlink all config packages into $$HOME
+	@$(MAKE) ai
 	@stow --restow --target=$$HOME $(STOW_PACKAGES)
+
+ai: ## Connect shared instructions and skills to Codex and Claude
+	@python3 scripts/setup-ai.py
+
+ai-check: ## Verify shared instruction and skill links
+	@python3 scripts/setup-ai.py --check
 
 unstow: ## Remove the symlinks created by stow
 	@stow --delete --target=$$HOME $(STOW_PACKAGES)
