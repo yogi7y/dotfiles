@@ -3,12 +3,14 @@
 # aerospace is not stowed; link its config with `make aerospace-personal`.
 STOW_PACKAGES := atuin claude cursor ghostty git herdr karabiner starship tmux vscode zsh
 
+AI_PYTHON := $(shell if [ -x /opt/homebrew/bin/python3 ]; then echo /opt/homebrew/bin/python3; elif [ -x /usr/local/bin/python3 ]; then echo /usr/local/bin/python3; else command -v python3; fi)
+
 AEROSPACE_DIR := $(HOME)/.config/aerospace
 AEROSPACE_OUT := $(AEROSPACE_DIR)/aerospace.toml
 
 .DEFAULT_GOAL := help
 
-.PHONY: help install brew stow unstow extensions update aerospace-personal
+.PHONY: help install brew stow unstow extensions update aerospace-personal ai-export ai-apply
 
 help: ## Show this help
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) \
@@ -22,6 +24,7 @@ brew: ## Install/update Homebrew packages from the Brewfile
 
 stow: ## Symlink all config packages into $$HOME
 	@stow --restow --target=$$HOME $(STOW_PACKAGES)
+	@$(MAKE) ai-apply
 
 unstow: ## Remove the symlinks created by stow
 	@stow --delete --target=$$HOME $(STOW_PACKAGES)
@@ -42,3 +45,9 @@ aerospace-personal: ## Use the personal AeroSpace config on this machine
 	@ln -sfn $(CURDIR)/aerospace/config/personal.toml $(AEROSPACE_OUT)
 	@command -v aerospace >/dev/null 2>&1 && aerospace reload-config || true
 	@echo "aerospace: using personal config"
+
+ai-export: ## Capture portable Codex and CodexBar settings into dotfiles
+	@$(AI_PYTHON) scripts/ai-settings.py export
+
+ai-apply: ## Restore portable AI settings, preserving local credentials and paths
+	@$(AI_PYTHON) scripts/ai-settings.py apply

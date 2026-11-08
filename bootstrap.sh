@@ -49,6 +49,9 @@ for pkg in "${STOW_PACKAGES[@]}"; do
   fi
 done
 
+info "Applying portable Codex and CodexBar settings…"
+make ai-apply
+
 # ---------- 5. tmux plugins (tpm) ----------
 if [ -x "$HOME/.tmux/plugins/tpm/bin/install_plugins" ]; then
   info "Installing tmux plugins…"
